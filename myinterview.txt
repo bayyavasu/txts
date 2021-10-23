@@ -1,0 +1,84 @@
+JAVA
+what is java?
+why java is platform independent?
+is java is completely object oriented ?if not why?
+how does jvm works?
+what is oops?
+how to demonstrate encapsulation?
+what is inheritance?
+what is abstract class?
+what is abstract method?
+what is polymorphism?what are the types of polymorphism?
+what is method overloading?
+what is method overriding?
+what is constructor and types of constructor?
+if we doesnt write any constructor which constructor is called?
+what is an interface?
+what is a thread?
+what are the ways to create thread?
+Difference between callable and runnable?
+Difference between normal thread and deamon thread?
+what is arraylist?
+what is vector?
+what is hashmap?
+when to use linkedlist and arraylist?
+
+
+
+
+
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------
+Spring
+why do we use spring?
+what is pom.xml?
+what is @autowired?
+what is dependency injection?
+what is @repository?
+what is @restcontroller?
+what are the factories in spring?
+what is application properties?
+difference between spring mvc and spring boot?
+----------------------------------------------------------------------------------------------------------------------------------------------------------------
+sql
+print 1st highest employee salary?
+what is innerjoin and outer join?
+what is group by?
+what is partionby?
+what are aggregate methods?
+select employee name starts with "a"
+triggers in sql?
+views in sql?
+---------------------------------------------------------------------------------------------------------------------------------------------
+Angular?
+difference between post and put?
+difference between post and get?
+why do we use components in angular?
+what is component?
+what is module?
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

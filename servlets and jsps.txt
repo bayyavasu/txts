@@ -1,0 +1,208 @@
+Applications
+1.Standard alone applications
+a.CUI(character user interface) application======> command prompt or console based
+command prompt act as interface and it is suppporting only character data
+b.GUI application======>applets
+It is a Standard alone application which takes input from user as collection of graphics and gives ouput to user as collection of graphics.
+
+to prepare Standard alone applications java provided some core librariesnlike
+java.lang
+java.io
+java.util
+java.awt
+java.swing
+2.Enterprice applications
+a.Web application========>request from the browser and response from the server
+ie.,apllication logic will be distributed over server machine
+here client is always browser
+intension is to provide dymanic response from server machine
+executed by both web server and application servers
+Web application is the collection of web components and which are executed by the web containers
+b.Distributed application===>apllication logic will be distributed between the both client and server
+client is servlet,jsp,strut,spring .....etc
+establish communication between local machine and remote machine
+executed by  only application servers
+Web application is the collection of distributed components like ejb components  and which are executed by the ejb containers
+==> Web based distributed application
+==>  Remote based distributed application
+-------------------------------------------
+Static response
+it is  the response given by the server machine without performing any action at the server machine
+Servlet
+servlet is a server side tech,it was designed on the top of java programming language,where java is thread based programming language,it will 
+make servlets as Thread based server side tech.
+if we prepare servlet application at tge server side then container will create the separate thread for each and every request inorder to handle 
+the requests,where thread is the light weight,it will take less execution time and less mmory to handle requests,it will increase application response 
+time and improves application performances
+
+Difference between servlets and jsps
+1.To prepare web applications if we use servlets then we must have very good java stuff
+1.To prepare web applications  we use jsps is to reduce java code as much as possible from web applications 
+
+2.servlets are designed on the top of the J2SE lilbraries
+2.jsps are designed on the top of the J2SE lilbraries and servlet API
+ 
+3.servlets are  very good to take request from the client and process the request and to process the request.But servlets are not good to
+generate dynamic response to client with very good look and feel
+3.jsps are  very good to generate dynmic response to client with very good look and feel but jsps are not good 
+to take request from the client and process the requests
+
+4.in web applications servlets are meant for processing and jsps are meant for presentation.
+
+5.in mvc based web application we must use servlets as controller and a set of jsp pages as view part.
+ex:spring web mvc module is mvc based web framework where DispatcherServlet is acting as controller and a set of jsp pages are acting as view part
+
+
+ 6.To prepare web application ,if we use only servlets then there is no clear separation between presentattion part and business part
+6.To prepare web application ,if we use only jsp pages then there is a clear separation between presentattion part and business part
+note:in jsp pages to prepare presentattion part we will use HTML tags and to provide business logic we will use jsp based tags
+
+
+7.when modifications done to Servlets then the java class has to complie again but jsps are auto compiled and auto loaded.  
+
+
+Client Server Architecture
+there are 3 parts in cs arch
+1.Client=====>browser
+URL
+IPADDRESS
+PORTNUMBER
+2.protocol===>it is the set of rules and regulations,which are used to carry data from one machine to another machine
+ex:HTTP,TCP/IP,UDP,FTP.......
+the main task of protocol in client-server architecture is to carry request data from client to server and to carry response data from server to client
+why we use only http protocol only?
+In web application we need a protocol
+1. it must be connection less protocol==>not to have physical connection,to have logical connection
+2.stateless protocol==>To remember present request data,not to remember previous request data
+3.compatible protocol with hypertextdata==>we need to transfer data from server to client in the form of hypertext data,so we need a 
+compatible protocol for hyper text data.
+
+Session Tracking Mechanisms
+Http protocol able to provide an option to submit different types of request from client
+
+http 1.0
+-------
+1.GET
+2.POST
+3.HEAD
+http 1.1
+-------------
+4.OPTIONS
+5.PUT
+6.TRACE
+7.DELETE
+
+
+Resered Http Method:CONNECT
+
+3.Server
+
+
+we can access server using URL,URI or URN
+Almost all the servers are supporting URLs only
+URL SYNTAX:
+
+
+
+
+--------------------------------------------------------------------------------------------------------------------------------------------------
+Servlets
+servlet is a server side component managed by container,by the execution of servlet container will generate dynamic response from server to client.
+
+servlet is a server side program,it must implement "javax.servlet.Servlet" interface either directly or indirectly.
+To prepare servlets,servlet API has provided predefined library in the form of "javax.servlet" package and "javax.servlet.http" package.
+As per the pre defined libraries provided by the servlets there are 3 ways to prepare servlets.
+
+1.By implementing Servlet interface
+servlet life cycle 
+1.servlet loading ==============>init
+2.servlet intansiation
+3.servlet initialization
+4.request processing 
+5.
+
+
+In servlet interface exactly 5 methods are there
+
+public interface Servlet
+{
+public void init(ServletConfig config)throws ServletException======>executed while servlets is intansiating
+public void service(ServlerRequest req,ServletResponse res)throws ServletException,IOException==>appllication logic
+public ServletConfig getServletConfig();==>returns configuration data
+public String getServletInfo();========>returns metadata
+public void destroy();==============>if information provided in the destroy method is executed when the servlet is deintializing
+
+}
+
+note:
+init(),destroy(),service() are lifecycle methods
+getServletConfig(),getServletInfo() are not involved in life cycle
+init method is executed for the instantiation of servlet but init() doesnt instantiate the servlet
+container will call the init() method
+public class Myservlet implements javax.servlet.Servlet
+{
+implementation of all the methods of servlet intterface
+}
+
+
+steps to prepare service()
+----------------------------------------------------
+public void service(ServlerRequest req,ServletResponse res)throws ServletException,IOException
+{
+}
+req==>the protocol takes the request to the server .
+this request information is stored in request  object .
+res==>initially res is empty.after performing the request the response is strored in res object
+to set the response first we have to set the response type.
+we can set response type as
+step 1==>res.setContentType("text/html");
+after performing the request we have to set the response to the PrintWriter .
+this  printwriter is defaultly connected to the servlet container.
+the container takes the response from the printwriter and gives to the response object.  
+we vcan set printwriter as
+step 2==>PrintWriter out=res.getWriter();
+ step 3=>setting response to the response object
+out.println("<html>");
+out.println("<body>");
+out.println("welcome to the servlet");
+out.println("</body>");
+out.println("/html");
+
+
+
+
+
+
+2.By extending GenericServlet abstract class.
+public class Myservlet extends GenericServlet
+{
+implementation of all the service provided methods 
+}
+
+
+
+
+3.By extending HttpServlet abstract class.
+
+public class Myservlet extends HttpServlet
+{
+implementation of all the service provided methods 
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

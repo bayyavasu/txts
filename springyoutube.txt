@@ -1,0 +1,25 @@
+framework==>i\they are the predefined api's
+speed and efficiency is increased because frameworks are optimistic
+no need to write the programs  from th scratch
+do  not worry about creating the objects
+inversion of control
+objects will tbe build 
+spring is open source developed by guy rod johnson
+spring is the framework for developing enterprise application
+spring is eneterprise edition java framework
+features:
+open source 
+lightweight because  it follows dps
+different frameworks can be used in spring
+unit testing
+writing of code is easy
+supports pojo
+loosely coupled
+reduce coupling with run time polymorphism
+layers:web layer
+common layer
+service layer
+data layer
+Architecture:spring architecture is layered architecture
+
+ 
