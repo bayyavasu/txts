@@ -1,0 +1,36 @@
+There are 2 types of web services
+1.soap web services(simple object  access protocol)
+2.restful web services
+soap:
+1.it is a xml based protocol for accessing web services.
+2.it is a platform independent and lnguage independent
+3.by using soap we use to interact with another applications
+4.soap is well secured than restful beacuse soap itself has a ws security.
+Disadvantages of soap:
+soap uses xml format.must be parsed to read
+soap only supports xml.
+soap uses WSDL.
+=>restful service is Architectural style.
+Representational State transfer
+Advantages of restful 
+4 reasons:
+1.rest doesnt have any protocols
+2. consume less bandwidth
+3.output is in any format==>json or text or http
+4.language and platform independent
+Stateless:==>server treats every request  as a fresh request.
+the request data will not be stored in session.
+
+http protocol is a stateless protocol.
+so restful apis also have a stateless behaviour.
+Resource:the data which is coming as a response from the server is called as  a resourse.
+http provides 4 methods
+Get,Post,Put,Delete
+Hppt request parts:
+Verb:represents methods
+URI:identifiess the resourse in server
+http version:represents http version
+header:client browser type,type of data we are requesting for.
+body:answer of request. 
+
+
