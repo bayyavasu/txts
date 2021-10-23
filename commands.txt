@@ -1,0 +1,18 @@
+windows+R                   to open command prompt
+cd ..                               control moves to one step backwards 
+cd                                  indicates foldername
+dir                                 displays files in the particular folder
+tab                                 fullfills the command 
+uparrow                         commands upwords
+down arrow                  commands downwards
+mkdir                            used to create a folder (syntax:  mkdir foldername;) 
+copy                              copy sourceaddress  destinatio addressss
+ren                                 used to rename a file ((syntax:ren oldname newname)
+del                                 used to delete a file ((syntax:del filename)
+dir foldername                used to search the folders 
+rd foldername                 only deletes the folder when it is empty 
+dir *.txt                           used to findout the files with .txt extension(syntax:dir  *.extentionname)
+dir   *b                                 used to findout the files ending with b
+dir   a*                                 used to findout the files starting with a
+dir   a*b                                 used to findout the files starting with a ending with b 
+cls                                       used to clear screen

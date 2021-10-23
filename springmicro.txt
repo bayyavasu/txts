@@ -1,0 +1,285 @@
+dependency
+eclipse:eclipse
+refresh
+bootstrapproperties in sales
+add file sales in configfiles with another port number
+schema in sales
+mvn clean spring run
+@enableeurekaclient in sales
+run again
+dependency
+enableresiurseserver
+simple controllwe
+apache 7010
+token
+------------------------------------------------
+19-4-21
+why microservices are used NGNIX(site)
+Drawback in previous are ===>monolithic=single service say as war file
+whole application has to be runned 
+for one change we need to run,test,deploy whole server
+any bug whole system will not be accessible
+heavy load 
+costly operation
+
+micro
+we use different servers for each component so above problems can be resolved
+all the modules talk to each other through http
+cost efficient(not money)
+disadvantages ==>log  maintenance
+
+
+loosely coupled
+ex:online shopping
+--------------------------------------------------------------------------------------------------------------------------
+maven-git-zenkins-docker-image genneration
+-----------------------------------------------------------------------------------------------------------------------
+dev-Qa(qualoty ananlysis)-(UAT)users/staging-production
+---------------------------------------------------------
+
+
+tools:
+GIt
+Technologies
+Concepts
+CI(continuous integration)/CID(continuous development)---Devops---Jenkins
+Monolithic Application:
+1.Builds each and Every module for every change.
+2.Requires complete testing for every module
+3.not posiible to use different versions or different technology stack.
+Microservices
+1.Building can be done for one service in which changes applied.
+2.Requires complete testing for one service in which changes applied.
+3.possible to use different versions or different technology stack.
+4.if service is failed,then then that will not be effected to other service
+5.
+
+Bases on 12 things microservices are came into picture
+CDCB---------BPDC--------DDLA
+CodeBase-----Dependency---Configuration--Backing services-
+Build-deploy-release-----Process Stateless application-----Data Isolation----Concurency
+Disposability----dev-prod parity----Logs-----Admin services
+Master branch
+C-----CodeBase-------------------git
+D-----code Dependency---------maven ,gradle--------------
+1.maven contains code dependencies
+2.Docker contains deploy level dependencies
+                    A.code level build
+                          maven dependencies
+                           jar files
+                          final output is jar file
+           Above operations are performed by maven
+                    B.Deploy level build
+                    hardware application
+                    os
+                    softwares for application
+                      jar file(application) 
+                final output is docker image file
+          Above operations are performed by docker or uDeploy
+                     
+C-----Configuration
+code level configuration is available in config server.
+deploy level configuration is in .env files,Environmrnt variables. 
+
+B-4. Backing services:loosely coupled
+kafka
+MQ--->messaging queue
+DB
+NoSQL
+
+
+5.Build ,Release and Deploy
+
+build------composing docker file
+Release --placing docker file into docker repository
+deploy----spinning(running) the docker file
+
+
+6.Processess state less application,azility to scale
+state full-vertical->if we maintain state full ness there will be problem of communication between the machines(holding data in code level)
+state less--hori-maintaining data only in database
+scaling is load balancing
+Vertical---monolythic--- (providing more ressources for the application)and 
+horizontal---micro services ---providing more instances
+
+
+7.D-Data isolation [port binding]
+maintaining the different databases  for different modules(Applications)
+if one application's database want to use another application's database should not call directly
+we have to  go through the https 
+all the modules talk to each other through http
+DownTimme vs High Availability
+ 
+8.Concurrency:Scale out via process model
+scale out---increase
+scale in ---decrease
+increasing(scale out) the server sizes in peak times
+decreasing(scale in) the server sizes in normal times
+
+
+9.DISPOSABILITY
+
+maximize robustness with fast startup and graceful shutdown
+
+
+10.Dev-QA-UAT-prod   Parity
+All the 4 stages  should contain same softwares and versions. 
+
+
+11.Logs:
+Treat logs as event streams
+
+ELK- Elasticsearch ,logtash  ,kibana  -
+Elasticsearch = searching=>it is a log file common for all the applications(modules)
+logtash:===analyzing===>it is a dependency that we have to mention at slf4j
+kibana ===visulalizing====>it is UI to read the logs in Elasticsearch 
+
+
+12.Admin Processess
+Run Admin/Management Processess as one-off processess ie.,separate rest services
+1.database scripts to intialize the database or scripts for fixing bad records..
+2.export and import records.
+3.meta data
+4.configuration management
+
+1.DownTimme vs High Availability
+ 2.Scalability 
+3.easy maintenence
+4.loosely coupled among rest applications and backing services
+5.CI/CD
+6..Emerging new technologies into existing projects
+
+
+Different ways to call Rest Services from Spring boot
+1.RestTemplate
+2.WebClient
+3.RestTemplate with load balance(Exclusively in micro services)
+4.Feign (Exclusively in micro services)
+
+
+Bus-->get configurations Dynamically without restarting the applications 
+Bus is dependency it requires messaging MQ server
+it provides high availability with out downtime while changing configurations
+-------------------------------------------------------------------------------------------------------------------------
+20-4-21
+--Object creation ==>composition,Setter,Constructor
+spring boot is depend on build tool
+maven is one of the build tool.gradle is alternate for maven
+spring=object creation =object injection=========>this is called IOC(Inversion of Control)
+Composition ==>Object inside the Another Object
+Aggre
+
+NO Qualifying bean=>nonUniquebeanException
+@Qualifier
+@Scope("prototype")
+
+Feature                                                                                      BeanFactory                                   ApplicationContext
+Bean Instantiation/wiring                                                                     yes                                                   yes
+Automatic BeanPostProcessor registration                                           No                                                    yes
+Automatic BeanFactoryPostProcessor                                                 no                                                    yes
+Convenient MessageSource access                                                      no                                                    yes
+ApplicationEvent publication                                                               no                                                     yes
+interview this week                                                                              no                                                   yes
+Angular
+Project explanations+requirements---
+-----------------------------------------------------------------------------------------------------------------------------
+                                                          21-4-21
+ All beans are stored in Application context
+ContextRefreshedEvent
+ContextStartedEvent
+ContextStoppedEvent
+ContextClosedEvent
+RequestHandledEvent
+ implements ApplicationListener<ContextStartedEvent>
+-----------jdbcWithSpring in ide
+
+public BasicDataSource basicDataSource()
+{
+}
+JdbcTemplate=>it depends on BasicDataSource
+JdbcTemplate jt=new JdbcTemplate(basicDataSource()) 
+
+hibernate is not preferable in some projects due to performance
+
+
+-----------------------------------------------------------------------------------------
+Spring boot interview
+1.Easy to use
+2.Rapid Application Development
+  Improves productivity
+3.It is used to create stand-alone Spring-based applications that you can just run
+4.Spring Boot framework comes with the
+   auto-dependency resolution,
+   embedded HTTP servers,
+   auto-configuration (Bean creation)
+   management endpoints(Production ready)
+   and Spring Boot CLI.
+
+Benifits:
+Provides auto-configuration to load a set of default configuration for a quick start of the application
+Creates stand-alone applications with a range of non-functional features that are common to large classes of projects
+It comes with embedded tomcat, servlet containers jetty to avoid the usage of WAR files
+Spring Boot provides an opinionated view to reduce the developer effort and simplify maven configurations
+Provides CLI tool to develop and test applications
+Comes with Spring Boot starters to ensure dependency management and also provides various security metrics
+Allows to work with multiple Profiles.
+DEV - QA -UAT (Staging) -PROD
+Integrates with Spring Ecosystem like Spring JDBC, Spring ORM, Spring Data, Spring Security easily by avoiding boilerplate code.
+
+ Explain how to create a Spring Boot application using Maven.
+ Spring Boot CLI
+ Spring Starter Project Wizard
+ Spring Initializr
+ Spring Maven Project
+
+How to run spring boot application:
+1. mvn spring-boot:run
+2. run as java application (using main method)
+3. java -jar [jarfile]
+
+Mention the possible sources of external configuration.
+Application Properties – By default, Spring Boot searches for the application properties file or its YAML file in the current directory, classpath root or config directory to load the properties.
+
+Command-line properties – Spring Boot provides command-line arguments and converts these arguments to properties. Then it adds them to the set of environment properties.
+mvn spring-boot:run -Dspring-boot.run.arguments=--server.port=8085
+
+java -jar spring-5.jar --server.port=8083  
+Profile-specific properties –  These properties are loaded from the application-{profile}.properties file or its YAML file. This file resides in the same location as that of the non-specific property files and the{profile} placeholder refers to an active profile.
+
+
+
+
+“Run as Java application”, then it automatically launches up the tomcat server as soon as it sees, that you are developing a web application.
+
+app.setDefaultProperties(Collections
+          .singletonMap("server.port", "8083"));
+
+embedded server configuration
+command-line arguments
+property files
+main @SpringBootApplication configuration
+
+
+Spring boot starters:
+
+spring-boot-starter: – This is the core starter and includes logging, auto-configuration support, and YAML.
+spring-boot-starter-jdbc – This starter is used for HikariCP connection pool with JDBC
+spring-boot-starter-web – Is the starter for building web applications, including RESTful, applications using Spring MVC
+spring-boot-starter-data-jpa – Is the starter to use Spring Data JPA with Hibernate
+spring-boot-starter-security – Is the starter used for Spring Security
+spring-boot-starter-aop: This starter is used for aspect-oriented programming with AspectJ and  Spring AOP
+spring-boot-starter-test: Is the starter for testing Spring Boot applications
+
+Explain Spring Actuator and its advantages.
+ Production ready tools by using actuator dependency.
+
+
+What is Spring Boot dependency management?
+Spring Boot dependency management is basically used to manage dependencies and configuration automatically without you specifying the version for any of that dependencies.
+
+Mention the minimum requirements for a Spring boot System.
+
+Java 8 +
+Spring Framework 5.1.9 +
+Maven 3.3+
+Gradle 4.4+

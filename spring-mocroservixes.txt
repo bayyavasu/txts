@@ -1,0 +1,10 @@
+To configure a application into a spring architecture
+1.properties(application.bootstrap)
+2.Annotations
+3.Dependencies
+
+A.rest applications connecting config server==>in this stepm we doesnt need any annotations
+
+1.spring-cloud-starter-config===>dependency
+run eclipse:eclipse (for the rest service pom.xml)==>it downloads required jar files
+2.provide Bootstrap property in rest apllication 

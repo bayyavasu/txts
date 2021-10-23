@@ -1,0 +1,11 @@
+Microservices
+1.ip address
+2.cloud==>mulitple machine within the same network working for same project.
+one application multiple instances for loadbalencing(fail over ,load balencing)
+when we are creating multiple instances we have to use cloud.
+server:ram,harddisk,cpu speed
+os 
+maven ,java,tomcat  etc
+java apllication
+app configuration
+devops process:

@@ -1,0 +1,29 @@
+A method cannot be both default and static in interface.
+funtional programming is used in interfaces to implement the abdtract methods in the main method.
+the uses of writing functional programming are:
+there is no need to create the new implementation class for implementation.
+less LOC
+---------------------------------------------
+Arrays.asList()
+Arrays.sorted()
+
+------------------------------------------------------------------------
+lambook annotations
+@Setter
+@Getter
+@ToString
+@NoArgsConsructor
+@AllArgsConstructor
+@Data
+@EqualsandHashCode
+@Component
+@Test
+@slf4j
+distinct()
+assertEquals()
+asserFalse();
+assertTrue();
+
+
+
+

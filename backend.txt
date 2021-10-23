@@ -1,0 +1,11 @@
+interoperability
+font end=consumer
+client(consumer application)======>server(backend)
+Angular application is kown as consumer application
+Our backend has to support multiple front ends.
+so when we want to interact  backend with diffrerent consumers(android ,os,webappln) we will use commonly operable objects.
+the  commonly operable objects are xml and jsons.
+xml are heavy weight and time consuming.
+so we will use jsons.
+using jsons we can interact backend with any UI.
+npm is used to install the packages for frontend

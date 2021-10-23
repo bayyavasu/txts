@@ -1,0 +1,127 @@
+npm ==>node package manager is the tool used to install the required tools in angular.
+EXT is the library for both angular and react.
+ng cache clean --force
+ctrl+c ==>to stop 
+ng add @angular/material
+
+ng new projectname
+ng g c first
+ng serve
+to create module:ng g m modulename
+to create component in the module:ng g c modulename/componentname
+1.using the component(in new module) from another component(app component)from another module(app module)
+a.export component from new module.
+b.import new modue into app module
+c.using selector of new component in app component 
+ ipconfig
+ping
+-------------------------------------------------------------------------------------------------------------------------------
+                                                   25-02-21
+Angular based application is divided into multiple modules.
+each modele is divided into multiple components.
+one component is combination of html,css and script.
+app module ==>is the default module.
+we get app component by default in app module
+default UI is related to default component ie., app component
+only app component is called automatically.
+to create our app in our project
+1.
+
+wrong html syntax:
+using wrong html syntaxes:
+==>selectors are case sensitive
+==>make sure modifying code is related to running application or not
+==>dont call one component inside the same component(it causes recursion).
+------------------------------------------------------------------------
+                        27-02-21
+DECLARATIONS
+It is located in app.module.ts in project.
+it consist of the list of all the modules(which were created by us).
+if we delete any module we have to clear its data in the app.module.ts 
+-----------------------------------------------------------------------------------------------------------------------------------
+                                                                               03-03-02         ex:proj fourth in angular1
+Actions: <button (click)="test()">(method binding)
+click
+variable value can change dynamically.(property binding)
+--------property binding
+property binding= <input type="text" value="{{number}}">    or    <input type="text" [value]="number">   
+event binding=<button (click)="datachange()">updatedata</button>
+datachange(){
+this.number++;
+}
+-------------------------------------
+Data  changes happened in typescript will effect in html==>one way binding
+The changes made in html will  effect in typescript==>two way binding
+we need to import Forms module in our module .s
+--------------------------------------------------------------------------------------------
+08-03-21
+ngIf	
+<h1 *ngIf="1==1">vasu</h1>
+<div *ngIf="flag">welcome</div>
+<ng template [ngIf]="flag">
+<div>welcome</div>
+</ng-template>
+09-03-21
+<div *ngSwitchCase="'1'">one</div>
+<div *ngSwitchDefault>default</div>
+if statement 
+<ng-container *ngIf="c>1; then a;else b"></ng-container>
+  <ng-template #a>
+    <h1>A block</h1>
+  </ng-template>
+  <ng-template #b>
+    <h1>B block</h1>
+  </ng-template>
+ng add @angular/material
+-------------------------------------------------
+22-3-21
+every module 											
+
+
+1.create module
+2.create component
+ 3.creating routing file.
+4.importing routing into module
+5.loading module into appmodule
+6.creating menuitems in sidebar 
+
+             VALIDATIONS
+A.Importing module
+1.Forms Module
+2.Reactieve Forms Module
+
+B.Form in html
+C.FormGroup
+D.providing relationship between html form and form group 
+           validation tools
+^	Start of a string.
+$	End of a string.
+.	Any character (except \n newline)
+|	Alternation.
+{...}	Explicit quantifier notation.
+[...]	Explicit set of characters to match.
+(...)	Logical grouping of part of an expression.
+*	0 or more of previous expression.
++	1 or more of previous expression.
+?	0 or 1 of previous expression; also forces minimal matching when an expression might match several strings within a search string.
+\	Preceding one of the above, it makes it a literal instead of a special character. Preceding a special matching character, see below.
+
+--------------------------------------------------------------------------------------------------
+@input
+@output==>EventEmitter<>
+@viewchild===>take property from UI
+w3schools.com/jsref/prop_html_innerhtmml.asp
+-------------------
+27-4-21
+
+service
+if the data updated in one component wil affect to the other component also to achieve this functionality service.ts is used
+ex:compcommunication
+
+
+
+
+4-5-21
+routing 
+After the login the control should goto specific component only
+when the person is login the page should not goto the login page again till the session is completed.

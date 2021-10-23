@@ -1,0 +1,38 @@
+1. Create module:
+  ng g m slokam.
+2. Create Components
+   ng g c slokam/course
+   ng g c slokam/student
+3. Providing routing in routings file
+   slokam.routings.ts:
+   export const slokamRouts:Routes= [
+    {
+        path:'',
+        children:[
+            { path:'course' ,component:CourseComponent } ,
+            { path:'student',component:StudentComponent}
+        ]
+    }
+];
+4. Import routings into slokammmodule.ts.
+   RouterModule.forChild(slokamRouts)    
+
+5. loading module into appRouting.
+   {
+        path:'slokam',
+        loadChildren:'./slokam/slokam.module#SlokamModule'
+    }
+ 
+6. Proving menu items into Side bar.
+  {
+        path: '/slokam',
+        title: 'Slokam',		
+        type: 'sub',
+        icontype: 'home',
+        collapse: 'slokam',
+        children: [
+            {path: 'course', title: 'COURSE', ab:'C'},
+            {path: 'student', title: 'Student', ab:'S'},
+           
+        ]
+    }

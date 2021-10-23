@@ -1,0 +1,79 @@
+	What is ORM?
+Main Features of ORM
+Why ORM?
+What is hibernate?
+
+Object==>instance of class
+Realation ==>Record in a table
+ORM is the mapping between the Object(come from class) and the Record in the Table
+Object contains Properties
+Table contains Column names
+Mapping is used to convert one format of data into another format of data
+Mapping sloves the problems of
+1.MisMatch of DataTypes
+2.Mis match of relationships (isA ,hasA  to one to one etc)
+3.Storage types  
+Mapping can be applied in the forms of
+1.Hbm files(Hibernate mappig files)-->it is the older version .now we are using annotations but in previous before java 5 they used xml files to 
+perform ORM these xml files are called as Hbm files
+2.Annotations
+Jpa annotations and hibernate engine
+        Benefits of ORM OR Hibernate
+1.Reduces the code==>Aplplication development is easy
+2.Maintainability==>Due to less code Changes can be fixed easy,Fixing bugs is easy,Enhancements(adding extra features)
+3.Portability(Migrating from one database to another database)=====>Hibernate works for many databases.If we want to change the database we need to change Configuration only
+dialects etc.,
+Hibernate internally used jdbc
+4.Performance====>
+a.Caching==>Caching is a temp data thet reduces the network calls
+Hibernate stores the request data and whenever the same request is performed then hibernate doesnt goes to database it gives its stored data==>It happens within the session
+Hibernate methods accepts only Entity Objects
+caching is 2 types
+1.FirstLevel
+==>Session
+2.SecongLevel
+==>SessionFactory===>it will stay for long time becaues there will be only one sf for entire application
+Browser also maintains cache it brinngs the html and css from thebrowser and stores it as cache and uses it  whenever the same request is performed
+Entity states
+Transient=====>Before the operation(save()..etC)
+Persistence====>Between the operation and sesseion.close
+Ditached======>Between the  session.close and sf.close()
+
+Caching is existed in mulitple places
+
+difference between save and persist
+save()===>saves the object in session and database
+persist()==>saves the data in the session
+if we want to send the persist object from session to database then say flush.
+persisit is used in long running processors
+in one session we cannot create multiple objects for same id of the same table
+difference between merge and update
+merge() avoids nonuniquekeyException
+delete converts from persistent to transient
+difference between get and load
+get()==>query will be generated directly
+load()==it goes every time  to database===>it create proxy class(sub class for pojo) this sub class object will assigned to super pojo
+when ever we use that object then the query will be generated
+one to one====>eager
+many to one ==>eager
+evict()
+clear()
+
+hitcount()====>if data found in session or session factory  then hitcount increases
+miscount()===>if data not found in session or session factory  then miscount increases
+putcount()===>it puts the retrieved data into session and sessionfactory so put count increases
+
+BLOB is the datatype used to store files in database
+pojo:byte[]
+
+qry.setFirstResult(30);
+qry.setMaxResult(10);
+@Transient
+insertable=false 
+updatable=false
+unique=true
+nullable=false 
+
+
+
+

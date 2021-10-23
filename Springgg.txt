@@ -1,0 +1,4 @@
+using repositories in springboot in three different ways
+1.using default methods
+2.findBy methods
+3.using queries

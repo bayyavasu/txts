@@ -1,0 +1,9 @@
+                 junit TEST
+install 
+
+clean===========>used to clean and install .class files in target folder
+compile==========>to compile the project files
+test compile,=======>to compile  \junittest\target\test-classes
+test=============>test the all the test cases in your project
+package=========>jar file creation
+install===========>moves all the jar into local repo

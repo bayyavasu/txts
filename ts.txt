@@ -1,0 +1,22 @@
+datatypes in type script
+data:datatype=value;
+ex:a=23
+a:number=23;
+data:string="slokam";
+loops ints:refer fourth angular project
+<ol>
+<li *ngFor="let a of marks">{{a}}</li>
+</ol>
+<h1 *   ngIf="1==1">vasu</h1>
+<input type="text" [(ngModel)]="uitots">
+<div [ngSwitch]="num">
+<div *ngSwitchCase="'1'">one</div>
+<div *ngSwitchDefault>default</div>
+if statement
+<ng-container *ngIf="c>1; then a;else b"></ng-container>
+  <ng-template #a>
+    <h1>A block</h1>
+  </ng-template>
+  <ng-template #b>
+    <h1>B block</h1>
+  </ng-template>

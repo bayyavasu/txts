@@ -1,0 +1,913 @@
+PROGRAMMING IS INTRODUCED TO SOLVE REAL WORLD PROBLEMS 
+
+                                                                        06-02-21
+ 
+                                                                        LOOPS
+1.FOR LOOP  
+                                        SYNTAX:for(int i=5;i>0;i++)
+2.WHILE LOOP (equal to for loop no difference but representation is easy in some situations)
+                                          syntax:
+                                         int i=0;
+                                       while(i>0)
+                                        {
+                                         i++;
+                                         }
+refer system examples-higharray
+3.DO-WHILE LOOP                
+                  it is used to execute the loop atleast once
+                                 int i=1;
+                                   do{
+                                  system.out.println(i);
+                                         i++;
+                                        }while(i>=10)
+-------------------------------------------------------------------------------------------------------------------------------------------------
+                                                                                   08-02-21
+   
+ OBJECT (examples in ide)                                     
+                  Object is combination of properties(variables) and operations(methods).                  
+                  Operation can be called as action.
+                  Operations depends on properties(methods).                
+                  EXAMPLE:By designing one bycycle we are producing many bycycles
+                  in that way by designing one class we are creating many objects.
+                  Design,blue print,plan(class,type)==>objects(instance).
+                  If we made changes in one object it doesnt efffect in other objects. 
+                  Object contains properties and methods which are defines(designed) in the class.
+                 How to create classs?
+                 How to create properties?
+                 How to create operations?
+                 How to create objects? 
+                 How to use objects?
+METHODS
+                      Methods contain inputs ,operations and outputs.
+                      A method may contains input or may not contain.
+                      Output may available or may not available.
+Method example:
+public class Account
+{
+  double blnce;
+long accNum;
+void deposit(double amt)
+{
+  blnce=blnce+amt;
+}                   
+
+double withDr(double amt)
+{
+  blnce=blnce-amr\t;
+return blnce;
+}         
+        returntype=output datatype            
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+                                                                                    09-02-21
+classname objectname=new classname();
+new classname();    will create object.
+objectname =reference varaiable to store the object created in above step.
+ objectname is also called as reference variable.
+ OBJECT
+                            Every class is considered as an datatype.
+                            Using class we can create our own variables.
+                            Objects are considered as variables or reference.
+                            'new' operator helps us to create object.  
+                            Using 'dot' operator we can use the object.
+                            Using object is nothing but using properties and methods.
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+                                                                                    10-02-21
+ *while calling mathod ,providing input values is mandatory but catching values is not mandatory.
+                 int c=a.add(4,2);   ///catching the return value.
+*we can call the method with same object mutiple times.
+*Default contructor is available for every class we defined.
+example:
+
+int calc(int c,int a,int b){
+int d=a+b+c;
+}// called function
+main{
+int a=1;
+int b=5;
+int c=2;
+c.add(a,b,c);  //calling function//its legal
+}
+i.e, we can call the methods by using variables as parameters.
+---------------------------------------
+CHAR DATATYPE:
+Integer and Char are compatible datatypes.
+*we can store integer in char datatype.
+example:
+           char c=55;///its legal 
+*we can store character in int datatype.
+example:
+           char c='a';///its legal 
+----------------------------------------EXAMPLES IN IDE
+  A-Z
+             for(char ch='A';ch<='Z';ch++)
+{
+system.out.println(ch);
+} output:A B C D E-------Z.
+-----------------------------------------EXAMPLES IN IDE
+  a-z
+             for(char ch='a';ch<='z';ch++)
+{
+system.out.println(ch);
+}output:a,b,c,d-----z.called
+-----------------------------------------------------------------------------------------------------------------------------------------------------------
+                                                                                               11-02-21
+*Classes which were created by us are   called  as custom classes.
+
+*Classes which were available in system are   called  as pre defined classes.
+Ex.String,Arrarlist,StringBuilder
+
+STRING:stringtest in feb10 in ide
+
+           String is a predefined class that available in java.
+           String is considered as an array.
+           we have to create object to string class.      i.e., String str1=new String("   hi helooo welcome");
+            here  str1 is an object for the string class.
+            whenever a object is created the methods which are available in string will be loaded into string object(str1).
+          we can call the different methods available in the string class using object.
+      
+                                                               1. objectname.charAt(int index);     // it returns the charater present in the index position. 
+                                                               2.subString                      returns substring
+                                                               3.length                         returns length of the string             
+                                                               4 .indexOf                     returns index of characters ,strings,characters fromindex,string fromindex
+                                                                                                      if we provide the characters which are not available in the string then it will give output as -1
+                                                               5.trim()                        removes leading and trailing spaces
+                                                               6.toLowerCase()
+                                                               7.toUpperCase()
+                                                               8.lastIndexOf()
+                                            namelike:
+                                                                9.str.startswith("  ")              returns boolean value
+                                                               10.str.endswith("  ")              returns boolean value
+STRING REVERSE :Stringreverse in feb10 ide
+---------------------------------------------------------------------------------------------------------------------------------------------------------------
+12-02-21
+OPERATORS:
+ex:count of vowels in an array
+1.i+=10;  ie.,i=i+10;
+2.i-=10;  ie.,i=i-10;
+3.i=+10; ie., assigning the value +10 to an array.
+4.i=-10;ie.,  assigning the value -10 to an array.
+difference between i++ and ++i.
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+CONSTRUCTOR:FEB15
+When we created a constructor the properties will get initialized to the object.we no need to call the object.
+Constructor does not contain any return type.
+If we write our custom(user defined) constructor default contructor is not available.
+*Default contructor is available for every class we defined.
+Default constructor is available for any class if we dont provide any of our constructor.
+class A
+{
+String name;
+int age;
+A(String n,age a)
+{
+name=n;
+age=a;
+}
+}
+
+A a=new A("slokam",3);
+
+3 rules for constructor 
+1.Number of parameters
+2.Data types of parameters
+3.Order of parameters.
+
+The input  variable(parameter of contructor) and the property variable can have same name.
+if we assign the input variable into a property variable the that variable can be used through the class.
+otherwise its limit will be within the constructor only.
+'this'(keyword) refers current object or instance(property variable)  not the parameter.
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+                                                                                                   16-02-21 
+Different types of logics involved in collection of values(arrays) are:
+1.Mapping logics
+2.Filtering logics
+3.Sorting logics
+4.Collecting values to other container(array)
+5.Reducing(single result for multiple values)
+ ex:count,min,max etc.,
+6.Searching
+           ex:allmatch,nomatch,anymatch
+7.Position based 
+        ex:index based 
+1. Mapping:                                                                 ex:print square of an each  number in an array.
+ex:       {1,4,2,6}
+             +5{6,9,7,11}
+           square:{1,16,4,36}
+           cube:{1,64,8,216}
+2.Filtering:                                                                      ex qn:print the values greater than 20 in an array.
+    ex:{1,4,2,6}
+           even:{2,4,6}
+            odd:1
+            prime:2
+3.Sorting:                                                                        ex:arrange the values in the array in ascending order.
+  ex:ascending,descending,age,qualification etc,
+4.Collecting values to other container(array)                 ex:list the even numbers in an array anstore it in another array.
+ex:         one array                     another array
+             {1,4,2,6}==>copy==>{1,4,2,6}
+             {1,4,2,6}==>even==>{4,2,6}
+             {1,4,2,6}==>odd==>{1}   
+5.Reducing(single result for multiple values)                ex:factorial of a given number.
+ ex:count,min,max etc.,     
+6.Searching                                                                     ex:search for element '5' whether it is present in array or not.
+           ex:allmatch,nomatch,anymatch
+         ex:  A{1 4 2 6}
+                B{9,2,4} 
+
+CONSTRUCTOR OVERLOADING:
+To write contructor overloading we need to follow the rule ie., having the different parameters.
+
+1.Number of parameters should be different
+2.Data types of parameters should be different
+3.Order of parameters should be different.
+
+
+METHOD OVERLOADING(same as constructor)
+EX:
+String str=new String("slokam");
+str.subString(starting index);
+str.subString(starting index,ending index);
+
+
+PACKAGE:package is a separator for different classes.
+One package may contain multiple classes.
+If any class is inside a package the first statement should be package statement.
+To use a  class which is available in different package we need to use import statement.
+
+ex:
+package  a;                         package b;
+class  A                               import a.A;
+{                                          class B
+int a=10;                           {
+}                                         main()
+                                           {
+                                            A   a1=new A();
+                                            } 
+                                             }
+
+EXCEPTION:
+1.try catch                   
+2.throw
+3.throws
+4.finally
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+                                                                                         17-02-21
+ ex:count the number of special characters in the string
+to count small chars                    :if(ch>='a' & ch<='z')
+to count capital chars                  :if(ch>='A' & ch<='Z')
+to count numbers                        :if(ch>='0' & ch<='9')
+to count special chars                 :if(!(ch>='A' & ch<='Z') && !(ch>='a' & ch<='z') && !(ch>='0' & ch<='9'))
+ program in feb15 in ide
+
+ '\'(escape character)  is used in String to tell the compiler that the character after the   '\'   is a part of string. 
+ex: String str="hello \"i am vasu";
+in the above example  at position 8 the cgaracter  is " actually the compler has to consider it as ending of string but it doesnt consider as
+end of the string when we use '\' before the ".
+TYPE CASTING:CONVERTING ONE DATATYPE TO ANOTHER DATATYPE IS CALLED TYPE CASTING.
+ 
+FILES:
+FileReader
+BufferedReader
+                      FILEREADER
+FileReader  is a class .
+FileReader is present in java.io package.
+FileReader contain of some methods(just like String class contains chatAt() methods) .
+FileReader methods are
+FileReader frr=new FileReader (" address of the file");
+1.frr.read();  ==>read() method returns  integer(ascii value of the character ).At the end of the file the index is -1.
+char ch=(char)fr.read();
+read()==>reads the file character by character.when we say frr.read() the control reads the first character and automatically 
+goes to the next position.
+
+	try{
+FileReader frr=new   FileReader("address");
+int i=frr.read();
+while(i!= -1)
+{
+system.out.println((char)i);
+i=frr.read();
+} }
+catch(Exception e)
+{
+System.out.println("error")
+}	
+ex:count number of small letters in a file in feb15 ide
+		BUFFEREDREADER
+
+BufferedReader is used to read the file line by line.
+BufferedReader br=new BufferdReader(fr);
+String ln=br.readLine();  ==>returns string.
+At the end of the file the index is null.
+	try{
+FileReader frr=new   FileReader("address");
+BufferedReader br=new BufferdReader(frr);
+String s=br.readLine();
+while(i!= null)
+{
+system.out.println(s);
+s=br.readLine();
+} }
+catch(Exception e)
+{
+System.out.println("error")
+}	
+------------------------------------------------------------------------------------------------------------------------------------------
+                                                                                    19-02-21	
+program:Read the contents from the file.
+
+print the sum of marks of students in a file.
+ex:feb19 in ide
+ex:readcontentsinfile.java
+ex:leastage.java
+                                         TYPES OF EXCEPTION:
+ArithmaticException                                         =>divided by zero.
+ArrayIndexOutOfBoundsException                  =>when it exceeed the array size.
+FileNotFoundException                                    =>indicates error in location or address.
+------------------------------------------------------------------------------------------------------------------------------------------
+                                                                                       20-02-21
+program to find the name of the student who has highest marks in a file.feb19 jproject nameofmaxmarksperson.java
+------------------------------------------------------------------------------------------------------------------------------------------------------
+                                                                                              21-02-21
+     ARRAYLIST:
+array is fixed in size.ie., array cannot be resized after array declaration.
+arraylist is not in fixed size,resized automatically.
+ex:namesofsamemarks in feb19	ide.
+methods in array list:
+syntax:ArrayList<String>   al=new ArrayList<>();
+1.    al.add(value);  ==>this method is used to add values into the arraylist.
+2.    al.get(position);   ==>this method is used to get values from the arraylist.
+3.     al.size();             ==>size method is used to know the size of the arraylist.
+ pojo classes:the classes which returns objects are called as pojo classes.
+----------------------------------------------------------------------------------------------------------------------------------------------
+                                                   23-02-21
+pojo class ==>it is used to store data of multiple datatypes.
+ex:pogo jp in ide(3 classes for declaring requirements,applying logic,retrieving data)
+ex:pojotest2returning multiple products using arraylist:ref pojotest in ide
+'== ' compares content of the primitive datatype. 
+'=='  cannot compares the content of object.
+To compare two string contents we have to use equals() method. 
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+                                                                        26-02-21
+                      ABSTRACTION
+changes happened in one class should not effect to another class.
+one class depends on so many other classes.
+one class is used by many classes.
+ex:product class is used by logic and productmain classes.
+any developer can modify any classes.
+we can made changes easily using abstraction.
+abstraction=hiring
+ex:tollfree
+setter(mutator) ,getter(accessor) methods are used in abstraction
+private properties and methods can be accessible within the same class.
+public properties and methods can be accessible within the same class ,same package and other packagers also.
+default properties and methods are accessible within the package only.not from another packages.
+2.Using private properties and public setter getter methods we can achieve ABSTRACION.
+ex:refer pojo test1 in slokamtest workspace ide
+-----------------------------------------------------------------------------------------------------------------------------------------------
+                                                                            27-02-21
+pojo:pojo is an  plain old java object.it consist of private properties and public setter and getter
+oops concepts
+1.encapsulation2.inhertance3.abstraction 4.polymorphism
+
+1.encapsulation:hiding the properties inorder to avoid the usage of properties from another class(other users).
+wrapping(hiding) the data ,methods and properties into a single entity is called as encapsulation.
+entity is nothing but class.
+2. Inheritance:Constructors are not going to be participate in inheritance.
+sub class contains more properties and methods than super class 
+types:
+1.single inheritance
+2.multiple:subclass is extending more than one class.(one child so many parents)
+3.multi level
+4.hierarchical:opposite to multiple inheritance(one parent somany childs)
+5.hybrid
+OVERRIDING:overriding happens in the subclass.
+we cannot override the constructors.
+we have to use same method name,same parameters same return name as in super class.
+After overriding i we are calling the subclass method  then the(subclass methos will be called) output is logic executed from subclass only.  
+After overriding if we create the object to super class and if we call the super class method then the super class method will be called.
+---------------------------------------------------------------------------------------------------------------------
+28-02-21
+polymorphism
+super class reference subclass object:
+it is used in inheritance method overloading.
+
+A extends B
+B extends C//B is the super class of A,C is the super class of B
+B b=new A();     //correct
+C c=new B();     //correct
+C c=new A();     //correct
+when we have super class reference and subclass object if you call ovverridden subclass method will be called. 
+-----------------------------------------------------------------------------------------------------------------------------------
+                                                                                             01-03-21
+Encapsulation===========>wrapping up of data (properties and operations)into a single class is called encapsulation
+Abstraction=============>property abstraction:hiding the properties(providing the private to properties)ex:pojo with setters and getters
+                                                             class abstraction:hiding the class(implementation)
+because of abstraction we can made changes easily.
+polymorphism:==========>one method different implementations.(inheritance + overriding).
+ 
+BINDING :SETTING one object into reference is called binging.
+RUNTIME BINDING:binding is decided(creation of object) at runtime is called runtime binding.ex:WhatUp,FaceBook program.
+--------------------------------------------------------------------------------------------------------------------------------------
+                                                                                             02-01-21
+To call static method no nned to create object.
+Abstract method contain no implementation.
+Abstract method should be written in Abstract class only.
+Abstract methods cannot be written in concrete class.
+The classes which are extending the  absrtact method(which is declared in absrtact class) must be implemented in the subclasses.
+Abstract class will be a super class.
+Normal classes are called as concrete class.
+Abtract methods or Abstract class contains incompleteness.
+Abstract class can contain both concrete methods and abstract methods.
+abstract class is not pure abstract class because abstract class may contain both abstract methods and complete(concrete)methods. 
+To write pure abstract classes we have ti create interfaces.
+Interfaces contains only abstract classes.
+Interfaces will be as super class.
+we cannot create object for interfaces and abstract classes they are just usedas super classes.
+we cannot create concrete methods inside the interfaces
+-----------------------------------------------------------------------------------------------------------------------------
+03-03-21
+              xml
+ex:
+<studentss>
+<student>
+<id>1</id>
+<name>one</name>
+<age>11</age>
+</student>
+<student>
+<id>2</id>
+<name>two</name>
+<age>16</age>
+</student>
+</studentss>
+marshalling:==>sending the data from java object to console or files
+unmarshalling:==>sending the data from xml file to java
+classes need to be imported: JAXBContext  c=JAXBContext.newInstance(ourClass.class);
+                                               Marshaller m=c.createMarshaller();
+                                               m.marshal(ourobject,fw or sw or f or system.out);
+ex:xml test in ide
+filetoxml in ide
+--------------------------------------------------------------------------------------------------------------------------
+                  08-03-21
+there are 2 types of object to object relationships
+1.has  a   relationship     ex:car has a engine
+2.is a relationship(inheritance)          ex:person is a employee  
+is a relationship is a parent to employee relationship
+in is a relationship the propertis can be direcctly used
+------------------------------------------------------------------------------------------------------------------------
+                                                      09-03-21
+access specifiers
+xmlwrapperelement  ref myproduct package in pojotest ide
+static:
+1.static property:for normal properties for every object one copy of that property is available 
+but for static property for all objects only one copy of that property is available
+i.e.,assigning multiple values to a static variable is not possible 
+
+ex:class a{                                                                 ex:class s
+int a=10;                                                                     {
+}a a1=new a();                                                           static int a=10;
+a a2=new a();                                                               }
+a1.a=10; ============>it is correct                        s a1=new s();
+a2.a=5;=============>it is correct                        a1.a=20;       ==>assigning multiple values to a static variable is not possible 
+2.static method                  
+3.static block
+---------------------------------------------------------------------------------------------------------------------------------
+                                                                                   10-03-21
+static methods or static variables can be called using class name or reference.
+static is meant for class.
+
+instance is meant for object.
+static variables or static methods having ony copy
+instance variables or instance methods having one copy per object(instance).
+we use to take static methods only when logic is not depending on any instance varaiables or instance methods
+instance or static block contains logic (instructions).
+static block executes at the time of class loading 
+instance block executes when the object is created.
+instance methods and instance variables cant be called from static methods or static blocks.
+static methods and static variables can be called from instance methods or instance blocks.
+------------------------------------------------------------------------------------------------------------------------------------
+                                                                             12-03-21
+access specifiers
+protected instance variables are not accessed in the classes(not subclass) of other package.
+STATIC OVERRIDING:generally in inheritance in super class reference and sub class object when we call with sub class objec the subclass will be called.
+but if the both sub class method  and super class  methods are static then the super class will be called.
+it is the proof that super classes cannot be overridden.
+static overriding doesnt show any error but output is from super class method only
+once we declared super class method as static then it can be overloaded in the sub class but the super class
+ method logic will be executed when we class with sub class reference..  
+ex:publi class A
+{
+static public void method1()
+{
+sysout("m122222");
+}
+}
+public class B extends A
+{
+static public void method1()
+{
+sysout("m22222");
+}
+}
+main
+{
+A a=new B();
+a.method1();                    ////since the object belongs to b super class(A) method will be called instead of subcalss method because of static
+}
+------------------------------------------------------------------------------------------------------------------
+                                                      13-03-21
+generalized class and specific class
+using super class reference we cannot call the subclass specific methods
+ex:public class A
+{
+public void method11111()
+{
+sysout("m122222");
+}
+}
+public class B extends A
+{
+ public void method2222()
+{
+sysout("m22222");
+}
+}
+main
+{
+A a=new B();
+a.method2222();          ////////it shows error because using super class reference we cannot call the subclass specific methods                  
+}
+
+when ever we say a.method2222();   the compiler checks whether the  class A  contains method2222 or not.   
+in suchb cases inorder to call sub class method(not overriden method) using super class reference  we have to do  downcasting.
+downcasting is the process of converting the super class object into subclass object.
+A a=new B();
+B b=(B)a;  //downcasting
+downcasting may throw classcast exception if object is different
+---------------------------------------------------------------------------------------------------------------------
+                                                                  15-3-21
+debugge
+pperspective
+stepover
+
+degug window variable window 
+breakpoint window and editor window
+terminate resume stepover(f6) stepinto(f5) skipallbreakpoints
+we should not run debugging multiple times simultaneously
+-----------------------------------------------------------------------------------------------------
+                                                            16-03-21
+client interaction layer(taking input or giving output)===>main method 
+service layer(ex:user status whether the user is activated or not) ==>contains business logic
+dao layer(saving the data or retrieving the data)==>contains logic to interact with data sources
+-------------------------------------------------------------------------------------------------
+                                                               17-3-21
+we have 3 different mechanisms to handle exceptions
+1.handling exception with trycatch
+2.exception postponing throws
+3.exceptio prevention throw
+------------------------------------------------------
+18-3-21
+exceptions are of 2 types 
+internal exception are called runtime exceptions or unchecked exceptions
+external exceptions are called  checked exceptions. 
+if any statement raises the exception within the try block remaining statements of try block will  not be executed
+if exception is raised then the control goes to  the try block
+finally block executes definetely regradless of the exception.
+finally block is mainly used to close the resourses.
+-----------------------------------------------------------------------------------
+22-3-21
+Exception propagation or exception chaining(sending the exception from dao to userinteration(main))
+changes effected in one class related to exception does not effect in other classes.
+constructor chaining( sub class constructor will call super class constructor, super class constructor will call super super class constructor and so on until object class)
+ex:class myclass extends Exception          //myclass===>Exception===>throwable===>object
+{}
+super keyword:using super keyword we can call super class contructor from sub class constructor
+super should be the first statement in the sub class constructor.
+using super we can call any contructor(parameter less or parameterized) of the super class 
+to call the contructor of the same class then we have to use 'this' keyword.
+this keyword is used to call the constructor of same class.
+Ex:supertest in ide
+To display the exception message at user side it is better to use userdefined exceptions.
+for that we have to create a class .
+this class  should extends Exception.
+public class ApplicationException extends Exception{
+public ApplicationException(String message)
+{
+	super(message);
+}
+}
+-----------------------------------------------------------------------------------------------------------
+                                                                 23-3-21
+auto closable: it supports the hiding of exceptions
+ overriding rules
+1.same methods name 
+2.same return type
+3.the access specifier of sub class should be broader or same
+4.the Exception of sub class should be narrow or same .
+5.Exception of tha subclass not mandatory
+6.there are no exception rules for unchecked Exceptions.ie., if the exception in the super class is unchecked exception then there is not rules for the exception in sub class.7.
+7.the return type of sub class should be narrow(covariant or subclass) or same.
+8.the parameters should be same or but the variable name can be different
+9.if sub class throws any Exception then it is mandatory for the super class to throw the Exception
+10.if super class throws any Exception then it is not mandatory  for the sub class to throw the Exception
+ getMessage
+getCause
+getSuppressed
+printStackTrace
+------------------------------------------------------------------------------------------------------------------------
+                                                                  25-3-21
+           Collections(super interface)
+1.List(interface)=========>ArrayList====>Vector====>LinkedList==> Stack
+2.set(interface)==========>Hashset====>LinkedHashSet===>TreeSet
+3.queue(interface)========>PriorityQueue
+
+ex:
+Collection<String> c=new ArrayList<>();
+c.add("one");
+c.add("two");
+c.add("three");
+
+boolean b=c.contains("one");
+System.out.println(b);
+
+ c.remove("two");
+System.out.println(c.size());                //c.size();
+Iterator<String> itr=c.iterator();
+while(itr.hasNext())
+{
+String s=itr.next();
+sysout(s);
+}
+     Generic Approach to  read the data in the collection
+for(String str:c)
+{
+sysout(str);
+}
+
+addAll();   (cUc2)   ===>this method is used to combine two collection
+ex:c.add(c2);   
+c.removeAll(c2);        (c-c2)
+c.retainAll(c2);           c intersection c2
+ 
+
+METHODS IN LIST
+add(int index,element);                 ===>
+set(int index,element);                       ==>it overrides the previous element
+clear();
+
+ArrayList(async)    ===>data processing is effective,data update is slow to do data updates  faster we have to use linked list
+LinkedList(async)===>data update is effective than ArrayList . 
+Vector=====>synchronous
+Stack(sync)=====>LIFO
+
+SET :: unique
+HashSet: no order
+LinkedHastSet:(insertion order)
+-------------------------------------------------------------------------------------
+                                                         26-03-21
+Equals method=====>returns boolean value
+there are 2 quals methods in java
+one belongs to String class
+another belongs to ObjectClass(every class is subclass of object class)
+we can compare 2 objects using quals method.
+ex:
+student std1=new student();
+std1.setId(1);
+  std1.setName("vasu");
+std1.setNumber(11234);
+
+student std2=new student();
+std2.setId(1);
+  std2.setName("vasu");
+std2.setNumber(11234);
+
+boolean b=str1.equals(str2);  it returns false even the contents are same because  here equals method doesnt  compare contents 
+it compares whether the 2 references(std1,std2)  poniting to same object or not.
+
+'==' doesnt compare the contents it compares the references of the contents.
+ex:       student std1=new student();
+             student  std2=std1;
+in tha above example both the references are pointing to same object 
+so when we say 
+std1==std2  it gives " true" as output
+
+"=="         is equal to the  Equals method in object class
+
+String constant pool:
+String s1="vasu";         //literal===>primitive
+String s2="vasu";
+   s1==s2 ===========>true
+String s1=new String("abc");
+String s2=new String("abc");
+s1==s2 ==============>false
+
+
+
+
+intern();
+it returns object of the constant pool(when we say s1 as intern in below example then s1 also act as literal) 
+ex: 
+String s1=new String("vasu");
+String s2="vasu";
+s1=s1.intern();,
+s1==s2=======output is true
+----------------------------------------------------------------------------
+concatination,immutability,creatiob of object and constant pool,heap,intern
+hashcode from object class
+returns unique number
+hashcode methods is called when we use collections
+object is stored using hashcode and buckets.
+there is default hashcode method in the object class
+we have to override the hashcode method(which contains prime) in the pojo class and provide (hashcode and equals)method in the pojo.
+if the contents are the hash code is same
+if hash code is same then the contents may or may not same.
+
+HashSet:=========>equals and hashcode
+LinkedHashSet:=====>equals and hashcode
+TreeSet:===========>compareTo
+TreeSet does sorting.                                                
+TreeSet uses comparable and compareTo  to compare provide unique key nature
+it is mandatory to use comparable when we use treeset.
+comparator is more preferable than comparable
+comparable works with this object and another object 
+comparator works with one object and another object 
+ex:treeset project in second ide
+TreeSet<student> ts=new TreeSet<>(new compareStudentId());
+ts.add(s1);
+ts.add(s2);
+ts.add(s3);
+sysout(ts);
+we can print ts directly 
+when we print ts directlt ts calls the toString method(overriden in the treeset) this toString calls the toString method in our pojo class.
+this happens not only in treeset it happens in all the collection classes.
+sorting is available only in TreeSet
+TreeSet and HashSet skips(not overrides)the next unique object
+------------------------------------------------------------------------------------------
+31-3-21
+
+
+classes with static methods are called as utility classes.
+'Collections' is a class that consists of static methods.(sort();).
+diff between comparable and comparator
+1.comparable:in comparable we can compare only one attribute
+1.comparator:in comparator we can compare how many attributes we want
+==>when we want to use comparator we have to provide the comparator object to treeset ex:treeset in ide
+ 
+                                                                        MAP:
+
+Map-------------->HashMap,Hash TAble,
+                           Linked hash set,
+                          Tree map,
+                           identity map,
+                         weekhashmap,
+                        concurrent hashmap
+ex:
+ Map<String, Integer> m = new HashMap<>();
+		m.put("one", 1);
+		m.put("two", 2);
+		m.put("three", 3);
+		m.put("four", 4);
+        //to get keys 
+		Set<String> s = m.keySet();
+    // to get valus
+		Collection<Integer> v = m.values();
+// to get key and value
+		Set<Entry<String, Integer>> set = m.entrySet();
+		for (Entry<String, Integer> e : set) {
+			System.out.println();
+		}
+        System.out.println(m.size());
+		int value = m.get("two");// collections doesnt use primitive datatype
+		System.out.println(value);// collections uses wrapper classes
+//here wrapper will be automatically convert into primitive(autoboxing)
+
+if we provide a same key for 2 entries then the value will get overrided
+ex:
+m.put("one", 1);
+m.put("one", 2); it becomes   ==>m.put("one", 2);
+
+
+HashMap has no order 
+LinkedHashMap follows insertion order.
+TreeMap raised classcastException if we doesnt give comparable or comparator==>
+          --------------------------------------------------------------------------------------------------------
+                                                     WHEN TO USE THE SPECIFIC MAPS
+use HashMap when we doesnt want any order  beacuse HashMap is faster than LinkedHashMap 
+IdentityHashMap compares the references only.it uses '=='.
+Grabage Collector will call finalize() method .
+finalize() method is available in object class
+we can overide and provide our logic in finalize() method. 
+when object is getting cleaned finalize() method is called.
+WeakHashMap   contains weak reference if no main reference is available for object which is in WeakHashMap  will be ccleaned by grabage collector. 
+HashMap   contains Strong reference if main reference is not  available for object which is in HashMap  will   not be cleaned by grabage collector.
+ex for WeakHAshMap
+Student s=new Student(1,"ksdfg");
+Map<Student,Integer> ss=new WeakHashMap<>();
+ss.put(s,1);
+s=null;
+System.gc();                //calling the garbage collector the object s will be removed but in case of HashMap the object will not be removed  
+------------------------------------------------------------------------------------------------------------------------------
+final 
+------class[final class cannot be extended]
+------method[final methods cannot be ovverriden in sub class]
+------variable[final variables cannnot be modified](property or field or instance variable ,static variable,local variable,parameter variable)
+we 
+ex for final object====>refr final test finalobjecttest package in slokamide
+final Product p=new Product(1, "vasu", 54);
+	 Product pp=p.setId(2);//5.
+	 Product p1=new Product(3, "mani", 36);
+	 
+	 1.String is aa immutable(cannot be changed) object
+	 we can modify the String using '+'
+	 2.whenever we modify the String the modified string will store in new object
+	 3.this new object should be taken in another reference.
+	 4.here the product also acts same as String
+	 when we want to update the properties in product then it has to store in new reference
+	
+	String s=new String("nn");//
+	String s="nn";//1.
+	String s=s.concat("vv"); ==>it gives error because String cannot be modified 
+	we have to store the String in another variable
+	String str=s.concat("vv");       //2==>s.concat("vv")    
+	                             //3===>String str=s.concat("vv"); 
+	System.out.println(s);
+	System.out.println(str);
+--------------------------------------------------------------------------------------------------------------------------------
+                Threads
+states in threads
+new(Thread t=new Thread();) =======>new state
+start(t.start)=========>runnable state
+running state
+
+--------------------------
+7-3-21
+sleep() method raises interrupted exception
+-------------------------------------------------------------------
+8-3-21
+the threads which came to the server are to be processed using single object.
+it avoids the redundancy in output of the service  response
+
+synchronization:
+--------------------------------------------------------
+10-4-21
+the difference between hashmap and hashtable is
+hashmap  is asynchronous   ,hashtable is synchronous
+hashtable does not allow null values 
+due to iunique key nature one null value will be overriden with another null
+ArrayList araises concurrent modificationException when we try to modify list at the time of processing the list(using foreach)	
+hashmap is faster that hashtable because hashmap allows multiple threads to run parallelly supports multithreading
+we can classify the data structures using following factors
+1.Data Structure is value based or key based
+2.Order(no order,insertion order,sorting order)
+3.Fast or Slow
+4.Lagecy
+5.Synchronous or Asynchronous
+6.ThreadSafe or non ThreadSafe
+7.failsafe or failfast
+8.Allows nulls or not
+9.Allows duplicates or not
+
+
+
+ 13-4-21
+serialization
+implements serializable
+FileInputStream
+FileOutputStream
+ObjectInputStream
+readObject();
+writeObject();	
+ObjectOutputStream
+-------------------------------------------------------------
+14-4===>sales micro
+--------------------------------------------
+15-4-21
+ways to create threads
+1.extends thread=============>doesnt support multiple inheritance it can extend only one thread class if it want to extend any other class it is not possible
+2.implements runnable=========>
+3.
+
+
+threadpool is created using executorservice
+callable runs using threadpool
+1.callable has returntype whereas thread and runnable doesnt have return types
+2.callable runs using threadpool
+Singleton==>eagerloading,lazysingleton
+synchronization can be done in 2 ways ==>using synchronized method ,synchronied block
+--interface is loosely coupled because interface doent contain any instance properties
+in abstract classes it contains instance properties it can effect the subclasses so it is better to use interfaces
+Abstract class contain constructor
+abstract class contains both static and instance properties
+interface contains only static properties.by default it takes all the properties as static
+interface contains abstract,default and static methods
+default and static are later added to interface for the purpose of backward compatibility(if interface want to provide any extra  methods then it 
+is useful)  
+abstract classes contains abstract,default,instance and static methods
+interface is bit slower than abstract classes
+-------------------------------------------------------------------------------------------
+19-spirng micro
+20-spring micro
+22-spring-spring boot
+23-spring boot
+24-hib
+25-hib

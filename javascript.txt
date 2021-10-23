@@ -1,0 +1,59 @@
+                                                                          08-02-21
+JAVASCRIPT
+                1.Inline js
+                2.Internal js
+                3.External js
+EXAMPLE : Html onclickjs.html
+------------------------------------------------------------------------------------------------------------------------
+ALERT: 
+<html>
+<head>
+<script>
+    function abc()
+    {
+        alert("this is from script tag");s
+    }
+</script>
+</head>
+<body>
+    <input type="button" value="click me" onclick="alert('hello')">
+    <input type="button" value="scripttag" onclick="abc()">
+
+</body>
+</html>
+---------------------------------------------------------------------------------------------------------------------------
+   TO GET VALUE IN THE TEXTBOX                    obj=document.getElementById('id name')
+                                                                                                  obj.value
+-------------------
+ParseInt:                                                  parseInt(variablename.value);
+Example :calcinjs.html
+-----------------------------------------------------------------------------------------------------------------------------------
+                                                             09-02-21
+VALIDATION:EXAMPLE:VAL.HTML
+BACKGROUNDCOLOR SYNTAX IN JS:backgroundColor="red";
+CHANGE BG-COLOROFTEXTBOX:document.getElementById(id). style.propertyname=new style;
+FOR FONT COLOR :SYNTAX:color="RED";
+*We can apply css class in javascript by using following syntax
+document.getElementById(id).classname(' ');
+-----------------------------------------------------------------------------------------------------------------------------------
+                                                                      12-02-21
+datatypes in javascript
+there are 3 types of datatypes in java.
+1.var===>it is used in any where.it is a global variable
+2.const====>local variable which cannot be reassigned.scoped variable
+3.let=====>local variable which can be reassigned.scoped variable
+document.getElementById().innerHTML=" ";
+---------------------------------------------------------------------------------------------------------------------------
+
+                                                                  17-02-21
+document.getElementById().innerHTML=" ";   or innerText
+document.getElementbyId()
+document.getElementsbyClassName()
+document.getElementsbyTagame()
+documents.getElementsbyName()
+ex:
+var elements=documents.getElementsbyName();
+for(var i=0;i<elements.length;i++)
+{
+elements[i]=newclassname;
+}

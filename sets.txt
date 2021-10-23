@@ -1,0 +1,12 @@
+sets 
+TREE SET=========>implemented using tree structure==>doesnot allow null==>uses compare methods==>sorted order
+HASH SET========>implemented using hash table=====>allows null values==>uses equals method====>does not maintain any order
+SORTED SET
+LINKED HASH SET=>used linked hash internally=>allows only one null value=>uses equals and hashcode=>maintains insertion order
+
+
+MAPS
+
+HASHMAP=========>allows null======>uses hashtable and equals===>no order=========>
+TREE MAP========>doent allow nul====>uses comparator==========>sorted order======>
+LINKED HASHMAP==>alows null=======>uses hashtable and equals====>insertion order====>

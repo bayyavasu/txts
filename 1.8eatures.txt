@@ -1,0 +1,13 @@
+Functional programming
+1.Consumer<DataType>=====================>accept();========>no return value(void)
+2.BiConsumer<Datatype,DataType>============>accept();=========>no return value(void)
+3.Functinal
+4.BiFunctional
+5.Predicate<Integer>=======================>test();==========>returns boolean
+6.Bipredicate<Datatype,DataType>=============>test();==========>returns boolean
+7.Supplier<DataType>======================>get();==========>returns datatype which was given in supplier
+in supplier the datatype may be generic(classname)
+
+-----------------------------------------------------------------------------------------------------------------------------------------------
+Streams 
+Streams are used to process the data in the collections.

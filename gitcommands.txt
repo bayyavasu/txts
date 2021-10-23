@@ -1,0 +1,22 @@
+                                           GIT COMMANDS
+git init
+touch filename.extension========>to create a file
+git status===================>to verify the status of the file
+git add file==================>to move the file from worksspace to staging/index area
+git commit -m "sample message"===>to move the file from staging/index area to localrepository
+clear
+git add .====================>to add multiple files
+ls========================>to know the list of files
+git config --list
+git config -global user.name "username"                                                                                        (vasu.bayya1)
+git config -global user.email "email"                                                                                               (vasu.bayya1@gmail.com)
+git clone url
+git push==================>to push the files from git to github
+---------------------------------------------------------------------------------------------
+create mavenproject
+create repository 
+clone  mavenproject with repository (git clone (url of repository)
+open git from repository in mavenproject
+then add files(if any warning git config --global  core.autocrlf true)
+git push
+check in repository 

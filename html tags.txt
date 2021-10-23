@@ -1,0 +1,88 @@
+IN HTML EACH TAG IS AN OBJECT AND ALL THESE OBJECTS ARE AVAILABLE FROM HTML DOCUMENT IN TREE STRUCTURE
+                                                                             HTML TAGS
+                                                                                 HTML
+                                                                            <html>  </html>
+                                                                                   HEAD
+                                                          <head>   style tags can write here</head>
+                                                                                   BODY
+                                                                             <body></body>
+                                                                                  FORM
+                                                                             <form><form>
+                                                                            PARAGRAPH
+                                                                                  <p></p>
+                                                                               ANCHOR TAG
+                                                <a></a>text-decoration:none(to remove unferline for the link),hover
+                                                                               TEXTBOX
+                                                           <input type="text"  class="classname">
+                                                                                     RADIO
+                                                              <input type="radio"   name="gender">
+                                                                              CHECKBOX
+                                                                  <input type="checkbox">
+                                                                         SELECT TAG
+                                                                             <select>
+                                                                 <option>option3</option>
+                                                                <option>option2</option>
+                                                                <option>option1</option>
+                                                                             </select>
+                                                                 FILE <input type="file">
+                                                             DATE<input type="date"><br>
+                                                                            BUTTON
+                                                <input type="button" value="submit"><br>
+                                                               INLINE CSS SYNTAX
+                                                            style="background-color:blue"
+                                                            <DIV>EX:DIV.HTML
+             div is available as block defaultly.but if we give display:inline it will come in one-line(inline)only
+                                                           <SPAN>EX:SPAN.HTML
+              span is available in one line defaultly.but if we give display:block it come in block(div).
+                                                                  <PADDING>
+                                                                   <MARGIN>
+                                                                POSITION(css)
+               There are multiple posiotion attributes they are1.static 2.relative 3.absolute 4.sticky5.fixed
+                                 1.static :defaultly position is static.
+                                 2.relative:with in the parent
+                                 3.absolute: it willapply for the html body 
+                                 4.sticky:
+              *using id we can apply styles by ising # instead of   ' . '(dot) .
+               example:#idnaame{
+                                                 }
+                                                              CSS SELECTORS
+                                                        dot is for class,# is for id 
+                                                       you can specify tag directly
+                                                             nested tags  div,p{
+                                                                                           }
+                                                    tag with id  ex: tagname,idname{}
+                                                  tag with class ex:tagname,classname{}
+google:CSS HTML SHAPES
+ LIST:<ol>    //ordered list
+<li></li>
+<li></li>
+<li></li>
+</ol>
+DROPDOWM:<SELECT>
+<option></option>
+</select>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                          
+
+                                                                   
+
+

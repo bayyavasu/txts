@@ -1,0 +1,93 @@
+create schema schemaname;
+create table schemaname.tablename (id  int not null auto autoincreament,name  varchar(20),sdept  varchar(15));
+to insert values:insert into schemaname.tablename(id,name,sdept) values(5,vasu,cse);
+to print all:select * from schemaname.tablename;
+to filter all:select * from schemaname.tablename where salary>=5000 and age<25;
+to update multiple values:update schemaname.tablename set name='dddd',sdept='dxxd'  where id=3;
+delete from schemaname.tablename where sdept=eee;
+to delete a table:       drop table schemaname.tablename ;  
+update a value:           update schemaname.tablename set salary=salary+5000  where id=3;
+delete a record(row) :     delete from tablename where condition;
+delete a column:        alter table tablename drop coloumn coulmnname; 
+-----------------------------------------------------------------------------------------------------------------------------
+                                                                23-2-21
+cross join
+inner join  :
+select * from jan244.person p inner join jan244.mobile m on p.pid=m.fkpid;
+left join
+select * from jan244.person p left join jan244.mobile m on p.pid=m.fkpid;
+right join
+select * from jan244.person p right join jan244.mobile m on p.pid=m.fkpid;
+------------------------------------------------------------------------------------------------------------------------------------------
+                                               24-2-21               
+relations in sql:
+theere are 3 relations in mysql.
+they are:
+1.one to one .ex:person table and adhar table==>they are matching to only one foreign key in the another table
+in one to one the foreign key can be taken in either side(vice versa). 
+2.one to many.ex:person  table and mobile table==>one person can have multiple phone numbers.
+in one to many foreign key should be taken in 'many' side where taking foreign key at 'one' side is not possible
+because multiple foreign keys cannot be stored at one place. 
+3.many to 	many.ex:person table and course table==>in many to many we cannot take foreign key on either side
+so that we have to create another table nad access the course from either side(vice versa).
+select p.name,c.name from jan244.course c inner join jan244.person p  inner join jan244.percourse pc on pc.fkcid=p.pid;
+	RELATIONS WITHOUT JOIN
+select a.number from jan244.adhar a where a.fkpid=(select p.pid from jan244.person p where name='anil');
+we can give only one value to as a sunquery.
+many to many 
+select p.name from jan244.person p where p.pid in (select pc.fkpid from jan244.percourse pc where pc.fkcid in(select c.cid from jan244.course c where c.name='core'));  
+select c.name from jan244.course c where c.cid in (select pc.fkcid from jan244.percourse pc where pc.fkpid in(select p.pid from jan244.person p where P.name='anil')); 
+------------------------------------------------------------------------------------------------------------------------------
+01-03-21
+distinct:====>select distinct attributenames from tablename;
+distinct is used to retrieve the unique values.
+=====>order by columnname asc; ===>retrieves the data in the ascending order (prints names starting with  a-z)
+=====>order by columnname desc; ===>retrieves the data in the descending order(prints names starting with  z-a)
+--------------------------------------------------------------------------------------------------------
+                                jdbc
+Class.forName(com.mysql.cj.jdbc.Driver);
+Connection c=DriverManager.getConnection("jdbc:mysql://localhost:3306/jan244","username","pwd");
+Statement st=con.createStatement();
+ResultSet rs=st.executeQuery("select * from jan244.adhar");
+jdbc connection:
+Class.forName(com.mysql.cj.jdbc.Driver);
+Class is itself a class present in the jar file.
+forName is the static method present in the class.
+Connection con=DriverManager.getConnection("url","pwd","username");
+DriverManager is a static class works  like an adapter which connects a interface to a specific database.
+getConnection() is a method in the driver manager class.
+createstatement is a method that returns Statement object .
+createStatement sends the sql statement to database.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Connection is a interface
+getConnection is a method
+
+
+
+
+
+
+
+
+
+
+
+ 

@@ -1,0 +1,39 @@
+echo "  "
+date 
+cal
+
+pwd                                                               prints present working directory
+dir                                                                  cmd
+cd ..                                                               moves one step backwards
+clear                                                               like cls in cmd
+ls -l                                                                 used to list all the folders in that  location
+
+ls -lt                                                                   sorting the formatting listing by the time modification   
+
+ls -al                                                               formatted listing with hidden files 
+
+la -lp
+cd   /drivename                                                change dir to dir
+cd                                                                   control comes to home directory directory
+pwd                                                                    shows current working directory
+mkdir                                                                   creates new directory
+ls -R                                                                   show all the files in the directory(folders) and sub directories
+dir   *.log                                                             displays file ending with .log extension
+more                                                                         used to find out the locked files in server(syntax:more 
+head  filemane                                                           displays    file contents first 10 lines
+tail -f 	                                                                  displays    newly added file contents 
+
+tail  filename                                                                  displays    file contents first 10 lines
+                                                             
+ctrl+c                                                                 used to kill the current process
+rm    file                                                                    delete the file
+rm  -f   file                                                            force to      delete the dir
+rm -r dir                                                                    deletes folder
+rm  -rf   dir                                                               force to delete the dir
+cp  file1     file2                                                          copy the contents of one file to the another
+cp      dir1     dir2                                                       copy dir1  to dir2
+mv   file1    file2                                                           rename the file1 to file 2(or )moves file from file to file2 if file2 dir is present
+       
+
+
+                                                    			
