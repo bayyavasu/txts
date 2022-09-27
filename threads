@@ -1,0 +1,155 @@
+multitasking:
+Executing serveral tassks simultaneously is the concept of multi tasking. There are 2 types of multi tasking
+1.Process based multi tasking.
+2.Thread based multitasking.
+1.Process based milti tasking:
+Executing serveral tasks simultaneously where each task is a separate independent program(process) is called Process based multitasking. 
+ex:while typing a java program in the editor we can listen audio songs from the same system.yet the same time we can download a file from net all these tasks will be executed simultaneously under indepenndent of each other.hence, it is process based multitasking. Process based multi tasking is best suitable at OS level.
+2.Thread based multitasking: 
+Executing serveral tasks simultaneously where each task is a separate independent part of the same program is called Thread based multitasking and each independent part is called a thread.Process based multi tasking is best suitable at programatic level.
+Advantage of MultiTasking:
+Whether it is process based or thread based the main objective of multitasking is to reduce reponse timme of the system and to improve performance.(Instead of doing tasks one by one doing tasks simultaneously).
+The main important application areas of multi threading are
+1. To develop multimedia graphics 
+2. To develop animations.
+3. To develop video games
+To develop web servers and application servers etc.,   
+
+
+Thread : A independent job of a program.
+Defining a thread: we can define a thread in the following 2 ways:
+1.  By extending thread class.
+2.  By implementing runnable interface.
+1.  By extending thread class:
+----------------------------------main thread-------------------------------------
+public class MainThread {
+public static void main(String[] args) {
+	MyThread myThread  = new MyThread();
+	myThread.start();
+	for(int i=0 ;i<6;i++)                       --------- executed by main thread
+		{
+			System.out.println(i);
+		}
+}
+}
+---------------------------------child thread----------------------------------------
+public class MyThread extends Thread{
+
+	@Override
+	public void run() {
+		// TODO Auto-generated method stub
+		for(int i=0 ;i<6;i++)                       --------- executed by child thread
+		{
+			System.out.println("child thread"+i);
+		}
+		super.run();
+		
+		
+}	}
+----------------------------------------
+Java provides inbuilt support for multi threading with rich API (Thread,Runnable,ThreadGroup ... )
+Differnece between t.start() and t.run()
+
+
+
+Thread scheduler:
+It is the part of the JVM .It is responsible to shedule threads ie., if multiple threads are waiting to get the chance of execution
+then in which order threads will be executed is decided by thread scheduler.
+we cannot expect exact algorithm followed bythread scheduler(may be first come first serve,shortest job first,round robin algorith). it is varied from JVM to JVM hence we can't expect threads execution order and exact output.
+Hence whenever situation comes to multi threading there is no guarentee for exact output but we can provide several possible outputs.
+possibility--1
+main thread 
+child thread
+-------------
+possibility--2
+child thread 
+main thread
+-------------
+possibility--3
+child thread 
+main thread
+child thread 
+--------------------------------------------------------------------
+If the t.start() is called then a new  thread will be created and that thread will be responsible for the execution of run().
+but in the case of t.run() a new thread won't be created and the run() will  be executed jst like a normal method call by main thread. hence in the above program if we replace t.start() with t.run() then the output is childthred 10 times followed by main thread 10 times. This total output produced by only main thread.
+
+	
+Importance of start() :
+
+to register the thread with thread scheduler and all other mandatory activities
+hence without executing thread.start() there is no chance of starting a new thread in java due to this thread class start method is considered as heart of multithreading
+1.	Register this thead with thead scheduler
+2.	perform all other madatory activities 
+3.	invoke run method
+
+	case-4	
+OverLoading of run() is always possible but thread.start() can invoke no-args run method
+The other overloaded run(int i) method we have to call exlicitily like a normal method call.
+--------------
+case-5:
+If we are not overriding run method : then thread class run() will be executed which has empty implementation hence we wont get 
+any output.
+ex:
+class myThread extends Thread{
+	
+}
+class test{
+	myThread  t = new myThread();
+	t.start();
+}
+The above program is correct but the output is empty because the thread class have empty run method.
+it is highly recommended to override run method.otherwise dont go for  threads.
+-----------
+overriding of start(): if we override start() then out start method will be executed just like a normal method call and new thread 
+wont be created.we are not giving the chance to call the super class start method.total output produced by main thread.
+it is not recommended to overridde start method otherwise dont go for multi threading.
+class myThread extends Thread{
+	public void start() {
+		// TODO Auto-generated method stub
+		for(int i=0 ;i<6;i++)                       
+		{
+			System.out.println("start method");
+		}
+	@Override
+	public void run() {
+		// TODO Auto-generated method stub
+		for(int i=0 ;i<6;i++)                       
+		{
+			System.out.println("child thread");
+		}
+	}
+}
+class test{
+	myThread  t = new myThread();
+	t.start();
+	System.out.println("main thread");
+}
+-----------------------
+class myThread extends Thread{
+	public void start() {
+		// TODO Auto-generated method stub
+		for(int i=0 ;i<6;i++)                       
+		{
+			super.start(0);
+			System.out.println("start method");
+		}
+	@Override
+	public void run() {
+		// TODO Auto-generated method stub
+		for(int i=0 ;i<6;i++)                       
+		{
+			System.out.println("child thread");
+		}
+	}
+}
+class test{
+	myThread  t = new myThread();
+	t.start();
+	System.out.println("main thread");
+}
+---------------------------------------
+Thread Life Cycle:
+	myThread  t = new myThread(); -----------> new/born state
+	t.start();        ----------->runnable or ready state
+	if Thread scheduler allocates processor -----------> running state
+	if run method completes     -----------> dead state
