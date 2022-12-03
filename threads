@@ -1,14 +1,17 @@
 multitasking:
-Executing serveral tassks simultaneously is the concept of multi tasking. There are 2 types of multi tasking
+Executing serveral tasks simultaneously is the concept of multi tasking. There are 2 types of multi tasking
 1.Process based multi tasking.
 2.Thread based multitasking.
+
 1.Process based milti tasking:
 Executing serveral tasks simultaneously where each task is a separate independent program(process) is called Process based multitasking. 
 ex:while typing a java program in the editor we can listen audio songs from the same system.yet the same time we can download a file from net all these tasks will be executed simultaneously under indepenndent of each other.hence, it is process based multitasking. Process based multi tasking is best suitable at OS level.
+
 2.Thread based multitasking: 
 Executing serveral tasks simultaneously where each task is a separate independent part of the same program is called Thread based multitasking and each independent part is called a thread.Process based multi tasking is best suitable at programatic level.
 Advantage of MultiTasking:
-Whether it is process based or thread based the main objective of multitasking is to reduce reponse timme of the system and to improve performance.(Instead of doing tasks one by one doing tasks simultaneously).
+
+Whether it is process based or thread based the main objective of multitasking is to reduce reponse time of the system and to improve performance.(Instead of doing tasks one by one doing tasks simultaneously).
 The main important application areas of multi threading are
 1. To develop multimedia graphics 
 2. To develop animations.
@@ -20,6 +23,7 @@ Thread : A independent job of a program.
 Defining a thread: we can define a thread in the following 2 ways:
 1.  By extending thread class.
 2.  By implementing runnable interface.
+
 1.  By extending thread class:
 ----------------------------------main thread-------------------------------------
 public class MainThread {
@@ -78,7 +82,7 @@ Importance of start() :
 
 to register the thread with thread scheduler and all other mandatory activities
 hence without executing thread.start() there is no chance of starting a new thread in java due to this thread class start method is considered as heart of multithreading
-1.	Register this thead with thead scheduler
+1.	Register this thead with thread scheduler
 2.	perform all other madatory activities 
 3.	invoke run method
 
@@ -100,12 +104,12 @@ class test{
 The above program is correct but the output is empty because the thread class have empty run method.
 it is highly recommended to override run method.otherwise dont go for  threads.
 -----------
-overriding of start(): if we override start() then out start method will be executed just like a normal method call and new thread 
-wont be created.we are not giving the chance to call the super class start method.total output produced by main thread.
+overriding of start(): if we override start() then ou start method will be executed just like a normal method call and new thread 
+wont be created.we are not giving the chance to call the super class start method.
+total output produced by main thread.
 it is not recommended to overridde start method otherwise dont go for multi threading.
 class myThread extends Thread{
 	public void start() {
-		// TODO Auto-generated method stub
 		for(int i=0 ;i<6;i++)                       
 		{
 			System.out.println("start method");
@@ -164,7 +168,7 @@ class  Thread implements runnable{
 Thread mythread implements runnable{
 
 }
-Runnable interface present in java.lang packageanf it contains only one method "public void run()"
+Runnable interface present in java.lang package and it contains only one method "public void run()"
 class myRunnable implements Runnable{
 	public void run()
 	{
@@ -183,7 +187,7 @@ public class main()
 		thread.start();
 	}
 }
-we will get mixed output andwe cant tel exact output.
+we will get mixed output and we cant tell exact output.
 case Study:
 		myRunnable r = new myRunnable();
 		Thread thread1 = new Thread(); 
@@ -351,7 +355,7 @@ public final void join() throws InterruptedException
 public final void join(long milliseconds) throws InterruptedException
 
 public final void join(long milliseconds,int nanoseconds) throws InterruptedException
-
+----------------------------------------------66666666666666-------------------------------------
 Every join method  throws interrupted exception which is checked exception hence compulsory we should handle this exception either by using 
 try catch or by throws keyword otherwise we eill get compile time error.
 	                                                  
@@ -479,3 +483,541 @@ class Test()
 			Thread.currentThread.join();
 
 }
+
+sleep():
+If a thread dont want to perform any operatoin for a particular period of time then it should go for sleep method.
+public static native void  sleep(long ms)throws  InterruptedException
+public static void sleep(long ms,int ns)throws  InterruptedException
+every sleep() throws interrupted exception hence, which is checked exception hence, whenever we are using sleep() compulsary we should handle
+InterruptedException either by try catch or by throws keyword otherwise we will  get compile time error.
+	                                                  
+											1.	when sleep time is completed
+											2.  if sleeping thread got 
+											    interrupted			 Thread.sleep(1000); or Thread.sleep(1000,100);  
+                                                 -------------------waiting state-------
+                                                |                  blocked for joining |
+												|                                      | 
+                          t.start()             \/           if thread scheduler       |       run() method
+      new myThread();  ---------------->  ready/runnable state----------------------> running state-------------------->   dead state
+     new/born state                                          allocates processor                  completes
+Example:
+class SlideRotator()
+{
+		public static void main(String args) throws  InterruptedException{
+ for(int i=0;i<5;i++)
+		{
+						System.out.println("Slide "+i);
+						Thread.sleep(5000);
+		}
+}
+
+How a Thread can interrupt another thread.
+A thread can interrupt a sleeping thread or waiting thread by using interrupt() of thread class.
+public void interrupt()
+class MyThread extends 	Thread{
+	public void run()
+	{
+		try{
+			for(int i=0;i<10;i++)
+		{
+			System.out.println("I am a lazy thread");
+            Thread.sleep(2000);
+		}
+		}
+		catch(InterruptedException e)
+		{
+			System.out.println("I got interrupted");
+			e.printStackTrace();
+		}
+	}
+}
+public 	ThreadInterruption
+{
+	public statc void main(String args[])
+	{
+		MyThread myThread = new MyThread();
+		myThread.start();
+		myThread.interrupt();
+		System.out.println("end of  thread");
+	}
+}
+If we comment 	myThread.interrupt() then  main Thread wont interrupt child thread in this case child thread will execute for loop 10 times.
+If we not commenting myThread.interrupt() then main thread interrupts child thread in this case output is 
+1. end of  thread
+2. I am a lazy thread
+3. I got interrupted
+
+**Note: whenever we are calling interrupt() if the target thread is not in sleeping state or waiting then there is no impact of interrupt call immediately.
+interrupt call will be waited until target thread entered into sleeping or waiting  state.
+If the target thread is entered into sleeping or waiting state then immediately interrupt call will interrupt the target thread.
+If the targte thread never entered into sleeping or waiting state in its lifetime then there is no impact on interrupt call. This is the only case where
+interrupt call is wasted
+
+class MyThread extends 	Thread{
+	public void run()
+	{
+	 for(int i=0;i<10000;i++)
+		{
+		System.out.println("child thread "+i);
+		}	
+			System.out.println("I am going to sleep");
+
+		try{
+		
+            Thread.sleep(2000);
+		
+		}
+		catch(InterruptedException e)
+		{
+			System.out.println("I got interrupted");
+			e.printStackTrace();
+		}
+	}
+}
+
+public 	ThreadInterruption
+{
+	public statc void main(String args[])
+	{
+		MyThread myThread = new MyThread();
+		myThread.start();
+		myThread.interrupt();
+		System.out.println("end of  thread");
+	}
+}
+	In the above example interrupt calll waited until  child thread completes for loop 10000 times.
+
+	Comparision Table of yield(), join() and sleep()
+
+	property                              yield                                          join                                     sleep
+	purpose?             if a  thread wants to pass its execution          if a  thread wants until completing        if a thread dont want to perform any 
+	                     to give the chance for remaining threads of       some other thread then it shoul call        operation for particular period of time
+						 same Priority then we should go for yield()         join()                                    then we should call sleep()
+	                    
+    is it overloaded                       No                                                                                                                                                       sleep(llong ms,int ns)-----> non nativeYes                                     Yes
+	is it final                            no                                              yes                                     No
+	is it throws InterruptedException      No                                              Yes                                     yes
+	is it native                           yes                                             No                                    sleep(long ms); --->natiiv
+	                                                                                                                           sleep(llong ms,int ns)-----> non native
+	is it static 							Yes                                             no                                     yes				
+
+--------------------------------------------------------77777777777777----------------------------------
+Synchronization 
+	Synchronized is the modifier applicable only for methods and blocks but not for classes and variables.
+	if multiple threads are trying to operate simultaneously on the same java object then there may be a chance of data inconsistency problem.	
+	To overcome this problem we should go for Synchronized keyword.
+	if a method or block declared as Synchronized then at a time only one thread is allowed to execute that method or block on the given object.
+	so that data inconsistency problem wil be resolved.			
+	The main Advantage of Synchronized keyword is we can resolve data inconsistency problems.
+	but the main disadvantage of Synchronized keyword is  it incrases waiting time of threads and creates performance problems.Hence, if there is no 
+	specific requirement then it is not recommended to use Synchronized keyword.	
+Internal working:	
+	Internally Synchronization is implemented by using lock. Every object inn java has a unique lock.
+	whenever we are using Synchronized keyword then only lock concept will come into the picture.
+	If a thread wants to execute Synchronized method on the given object first it has to get lock of that object. 
+	Once thread  got the lock then it is allowed to execute ant Synchronized method on that object.
+	Once method execution completes automatically thread releases lock.
+	Acquiring and releasing lock Internally takes care by JVM and programmer not responsible for this activity.
+	While a thread executing Synchronized method on the given object the remaining threads are not allowed to execute any Synchronized method 
+	simultaneously on the same object.
+	But remaining threads are allowed to execute non Synchronized methods simultaneously.
+	lock concept is implemented based on object but not based in method.
+
+               	--------------------------------
+               	| Non         |  Synchronized  | 
+                |Synchronized |      area      |
+               	| area        |                |
+               	--------------------------------
+This area can be accessed              This area can be accessed by only one thread(which having lock)
+by any no of threads                    at a time
+simultaneously	
+				
+Synchronized Area
+{
+	where ever we are performing update operation add/update/delete ie., where the state of object is changing 
+}	
+Non-Synchronized Area
+{
+	where ever we are performing read operation  ie., where the state of object is not changing 
+}		
+Example:
+class Reservation{
+	checkAvailability()   -----------> Non-Synchronized
+	{
+
+	}
+	bookTicket()    -----------------> Synchronized
+	{
+
+	}
+}
+
+Synchronized Example:
+class Display
+{
+	public Synchronized  void wish(String name)
+	{
+       for(int i=0;i<10;i++)
+	   {
+		System.out.println("Good morining :");
+		try{
+			Thread.sleep(2000);
+		}catch(InterruptedException e)
+		{
+			e.printStackTrace();
+		}
+	   }
+		System.out.println(name);
+
+	}
+}
+
+class MyThread extends Thread
+{
+	Display d;
+	String name;
+	MyThread(Display d, String name)
+	{
+     this.d = d;
+     this.name = name;
+	}
+	public void run()
+	{
+		d.wish(name);
+	}
+}
+
+class SynchronizedDemo
+{
+	public static void main(String args[])
+	{
+		Display d =new Display();
+		MyThread mythread1 = new Mythread(d,"Dhoni");
+		MyThread mythread2 = new Mythread(d,"Kohli");
+		MyThread mythread3 = new Mythread(d,"yuvraj"); 
+       mythread1.start();
+	   mythread2.start();
+	    mythread3.start();
+
+	}
+}
+
+When the wish method is Synchronized then wish method can be used only by one thread at a time.that causes regular output.
+When the wish method is not Synchronized then wish method can be used by any thread. that causes mixed and irregular output.
+
+-----------------------------8888888---------------------------------------
+case study:
+class SynchronizedDemo
+{
+	public static void main(String args[])
+	{
+		Display d1 =new Display();
+		Display d2 =new Display();
+
+		MyThread mythread1 = new Mythread(d1,"Dhoni");
+		MyThread mythread2 = new Mythread(d2,"Kohli");
+       mythread1.start();
+	   mythread2.start();
+
+	}
+}
+Eventhough wish() is Synchronized we will get irregular output because threads are operating on different java objects.
+Reason:if multiple threads are operating on same java object then Synchronization is required 
+ if multiple threads are operating on multiple java objects then Synchronization is not required.
+mythread1 requires the lock of d1 object
+mythread2 requires the lock of d2 object
+
+
+                                Class Level Lock:
+Every  class in java has a unique lock which is nothing but class level lock.
+If a thread wants to execute a static Synchronized method then thread required class level lock.
+once thread got class level lock then it is allowed to execute any static synchrinized method of that class.
+once method execution completes automatically thread releases the lock.
+
+class x{
+
+	static synchronized m1(){}             ------------------->class level lock
+    synchronized m1(){}                    ------------------->object level lock
+	static  m1(){}                         -------------------> no lock required
+	  m1(){}                               -------------------> no lock required
+
+}
+while as thread executing static synchrinized method the remaining threads are not allowed to execute any static Synchronized method simultaneously
+But remaining threads are allowed to execute the following methods simultaneously.
+1.normal static methods
+2.Synchronized instance method.
+3.normal instance method
+class Display
+{
+	public   void wish(String name)
+	{
+       for(int i=0;i<10;i++)
+	   {
+		System.out.println("Good morining :");
+		try{
+			Thread.sleep(2000);
+		}catch(InterruptedException e)
+		{
+			e.printStackTrace();
+		}
+	   }
+		System.out.println(name);
+
+	}
+	public   void wish2(String name)
+	{
+       for(int i=0;i<10;i++)
+	   {
+		System.out.println("Good morining :");
+		try{
+			Thread.sleep(2000);
+		}catch(InterruptedException e)
+		{
+			e.printStackTrace();
+		}
+	   }
+		System.out.println(name);
+
+	}
+}
+
+class MyThread extends Thread
+{
+	Display d;
+	String name;
+	MyThread(Display d, String name)
+	{
+     this.d = d;
+     this.name = name;
+	}
+	public void run()
+	{
+		d.wish(name);
+	}
+}
+class MyThread2 extends Thread
+{
+	Display d;
+	String name;
+	MyThread(Display d, String name)
+	{
+     this.d = d;
+     this.name = name;
+	}
+	public void run()
+	{
+		d.wish2(name);
+	}
+}
+
+class SynchronizedDemo
+{
+	public static void main(String args[])
+	{
+		Display d =new Display();
+		MyThread mythread1 = new Mythread(d,"Dhoni");
+		MyThread2 mythread2 = new Mythread(d,"Kohli");
+       mythread1.start();
+	   mythread2.start();
+	}   ------------------------------------------->mixed  output(irregular output)
+}
+-------------------------------9999999--------------------------------------------------------------------------------------------
+Synchronized Block
+If very few lines of coderequires Synchronization  then it is not recommended to declare entire method as synchrinized.
+we have to enclose those few lines of code by using  synchonized block.
+The main advantage of synchronized block over synchronized method is it reduce waiting time of thread and improves performance of the system.
+We can declare synchronized block as follows:
+1.To get lock of current block:
+synchronized(this)
+{
+
+}
+If a thread got lock of current object then it is allowed to execute this area.
+
+2.To get the lock of particular object.
+synchronized(d)
+{
+
+}
+If a thread got lock of particular object then it is allowed to execute this area.
+
+2.To get the class level lock:
+synchronized(Display.class)
+{
+
+}
+If a thread got class level lock of Display class then only it is allowed to execute this area.
+class Display
+{
+	public   void wish(String name)
+	{
+		//one lack lines of code
+		synchronized(this)
+       for(int i=0;i<10;i++)
+	   {
+		System.out.println("Good morining :");
+		try{
+			Thread.sleep(2000);
+		}catch(InterruptedException e)
+		{
+			e.printStackTrace();
+		}
+	   }
+   		System.out.println(name);
+	}	
+		//one lack line of code
+
+	}
+}
+
+class MyThread extends Thread
+{
+	Display d;
+	String name;
+	MyThread(Display d, String name)
+	{
+     this.d = d;
+     this.name = name;
+	}
+	public void run()
+	{
+		d.wish(name);
+	}
+}
+class SynchronizedDemo
+{
+	public static void main(String args[])
+	{
+		Display d =new Display();
+		MyThread mythread1 = new Mythread(d,"Dhoni");
+		MyThread2 mythread2 = new Mythread(d,"Kohli");
+       mythread1.start();
+	   mythread2.start();
+	}   ------------------------------------------->regular  output
+}
+
+Lock concept applicable for object  types and class types but not for primitives hence, we cant pass primitive types of arguement to synchronized block.
+otherwise we eill get compile time error saying Unexcpected type.
+Example:
+int x=10;
+synchronized(x)
+{
+
+}
+exception: Unexcpected type
+found : int
+required: reference
+
+FAQ 
+	1. Synchronized keyword where we can apply?
+	2.Advantages  of synchronized keyword. resolve data inconsistency problem
+	3.explain disadvantages of synchronized keyword. increases waiting time of threads and creates performance problem
+	4.what is Race condition? If multiple threads are operating  simultaneously on same java object then there may be a chance of data  inconsistency problem.This is called race condition.We can overcome this problem using synchronized keyword.
+	5.What is object lock when it is required? whenever a thread wants to use synchronized method then 
+	6.what is Differnece between class level lock and object level lock? 
+	7.while a thread executing synchronized method on the given object is the remaining threads are allowed to execute any other synchronized method simultaneously on the same object?  No
+	8.what is synchronized block andhow to declare?
+	9.Advantage of synchronized block over synchronized method?
+	10. Is a thread can acquire multiple locks simultaneously?    Yes from different objects
+	class x{
+		public synchronized void m1()
+		{
+			y y = new Y();
+			synchronized(y)
+			{
+				Z z = new Z();
+				Synchronized(z)
+				{
+					 
+				}
+			}
+
+		}
+	}
+1.
+Two threads can communicate wuth each other by using wait(), notify() ,notifyall() methods.
+The thread which is expecting updation is responsible to call wait() then immediately the thread will enter into waiting state.
+The Thread which is responsible to perform updation, after performing updation it is responsible to call notify() then waiting thread will 
+get that notification  and continue its execution with those updated items.
+2.
+wait(), notify() ,notifyall() methods present in object class but not in thread class because thread can call these methods on
+any java object.
+3.
+To call wait(), notify() ,notifyall() methods on any object, thread should be owner of that object. 
+ie., the thread should have lock of that object ie., inside synchronized area. hence we can call notify() and notifyall() only from synchrinized area.
+otherwise we will get RunTimeException saying IllegalMonitorStateException
+If a thread calls wait() on any object it immediately releases the lock of that particular object and entered into waiting state.	
+If a threads calls notify() on any object it releases the lock of that object but may not immediately. except wait(), notify() and notifyall()
+there is no other method where thread releases lock.
+
+       method                          is thread releases the lock
+	   yield()                                No
+	   join()                                 No
+	   sleep()                                No
+ 	   wait()                                 Yes
+	   notify ()                              Yes
+	   notifyall()                            Yes
+which of the following is valid?
+1.	    the thread calls wait() immediately goes to wait() without releasing  lock.
+2.if a thread calls wait() it releases the lock of that object but may not immediately.
+3.If a thread calls wait() on any object it releases all locks acquired by that thread and immediately entered into waiting state.
+4.  the thread calls wait()  on any object it immediately releases  lock and goes to wait() .----------------->correct
+5. If a thread calls notify() on any object it immediately releases the lock of that particular object.
+6.If a thread calls notify() on any object it releases the lock of that particular object but may  not immediately..
+         public final void wait() throws InterruptedException
+         public final native void wait(long milliseconds) throws InterruptedException
+         public final native void wait(long milliseconds,int nanoseconds) throws InterruptedException
+         public final void notify()
+         public final void notifyall()
+ Note: Every wait() throws InterruptedException which is checked exception hence whenever we are using wait() compulsary we
+ should handle this InterruptedException either by try catch or throws keyword.
+ Otherwise we will get compile time error.
+ Producer COnsumer problem:
+   producer thread is responsible to produce items to the queue.	
+   and COnsumer thread is responsible to COnsume items from the queue.
+   If Queue is empty then consumer thread will call wait() and entered into waiting  state.	 
+   After  producing items into the queue producer thread is responsible to call notify() then waiting consumer will get that notification. and continue its execution with updated items.
+
+   class ProducerThread
+   {
+	produce()
+	{
+		synchonize(q)
+		{
+				//produce ites to the queue
+		q.notify();
+		}
+	}
+   }|
+    |
+	|
+  queue
+    |
+	|
+	|
+   class ConsumerThread
+   {
+	consume()
+	{
+		synchonize(q)
+		{
+		if(q is empty)
+		{
+			q.wait();
+		}
+			else
+consume items		}
+	}
+   }
+
+we can use notify() to give the notification for only one Waiting thread.
+If multiple threads are waiting then only one thread will be notified and the remaining have to wait() for further notification.
+Which thread will be notified we cannot expect it depends  on  JVM.
+We can use notifyall() to give the notification for all waiting threads of  a particular object. 
+Eventhough multiple threads notified but executing will be performed one by one because threads required lock. and only one lock
+is available.
+Note: On which object we are calling wait() thread requires lock of that object.
+ex: if we are calling wait() on s1 then we have to call wait() on s1 then we have to get lock of s1 object.
+but not s2 object.
+-------------------------------------1212121212121212----------------------------------------------
+If 2 threads are waiting for eachother forever such type of infinite waiting is called deadlock.
